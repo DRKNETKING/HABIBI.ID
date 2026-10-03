@@ -1,0 +1,355 @@
+const translations = {
+    id: {
+        navHome: "Beranda",
+        navAbout: "Tentang",
+        navServices: "Layanan",
+        navProjects: "Project",
+        navTestimonials: "Testimoni",
+        navContact: "Kontak",
+        navStart: "Mulai Project",
+
+        heroEyebrow: "DIGITAL SERVICE • 2026",
+        heroTitleOne: "Bangun Website",
+        heroTitleTwo: "Profesional.",
+        heroDescription: "Kami membantu bisnis, UMKM, organisasi dan personal membangun website modern yang cepat, responsive dan memiliki tampilan profesional.",
+        heroButton: "Mulai Project",
+        heroProjects: "Lihat Project",
+
+        statOne: "Modern Design",
+        statTwo: "Responsive",
+        statThree: "Support",
+
+        visualSmall: "DESIGN",
+        visualDesign: "Modern 2026",
+        readySmall: "PROJECT",
+        readyText: "Ready to Build",
+        screenTitle: "Digital<br>Experience.",
+
+        aboutKicker: "TENTANG HABIBI.ID",
+        aboutTitle: "Website bukan hanya tampilan.",
+        aboutText: "HABIBI.ID adalah layanan digital untuk membantu menghadirkan website yang memiliki desain modern, struktur yang jelas dan pengalaman pengguna yang nyaman.",
+        aboutTextTwo: "Setiap project dibuat dengan memperhatikan kebutuhan bisnis, identitas brand, responsive layout dan kemudahan penggunaan.",
+
+        aboutItemOne: "Modern Interface",
+        aboutItemOneText: "Tampilan clean dan mengikuti tren digital terbaru.",
+        aboutItemTwo: "Responsive",
+        aboutItemTwoText: "Nyaman digunakan melalui desktop, tablet dan smartphone.",
+        aboutItemThree: "Custom Project",
+        aboutItemThreeText: "Dibangun berdasarkan kebutuhan dan tujuan project.",
+
+        servicesKicker: "LAYANAN",
+        servicesTitle: "Solusi digital untuk kebutuhan Anda.",
+
+        serviceOne: "Company Profile",
+        serviceOneText: "Website profesional untuk memperkenalkan perusahaan, bisnis atau organisasi.",
+        serviceTwo: "Landing Page",
+        serviceTwoText: "Landing page modern untuk promosi produk, jasa, campaign atau personal brand.",
+        serviceThree: "Sistem Informasi",
+        serviceThreeText: "Sistem informasi berbasis web untuk membantu proses operasional.",
+        serviceFour: "POS & Management",
+        serviceFourText: "Aplikasi kasir, stok, transaksi, laporan dan manajemen bisnis.",
+        serviceFive: "UI/UX Website",
+        serviceFiveText: "Perancangan interface modern dengan fokus pada pengalaman pengguna.",
+        serviceSix: "Maintenance",
+        serviceSixText: "Perawatan, perbaikan dan pengembangan website secara berkala.",
+
+        processKicker: "PROSES KERJA",
+        processTitle: "Dari ide menjadi digital.",
+        processOne: "Diskusi",
+        processOneText: "Memahami kebutuhan dan tujuan project.",
+        processTwo: "Design",
+        processTwoText: "Menyusun konsep interface dan struktur halaman.",
+        processThree: "Development",
+        processThreeText: "Mengembangkan website sesuai konsep yang disepakati.",
+        processFour: "Launch",
+        processFourText: "Testing, finalisasi dan website siap digunakan.",
+
+        projectsKicker: "PORTFOLIO",
+        projectsTitle: "Beberapa Contoh Project.",
+        viewProject: "Lihat Project",
+        aanDescription: "Contoh project website AAN yang menjadi bagian dari portfolio HABIBI.ID.",
+        posDescription: "Konsep sistem kasir dan manajemen bisnis modern.",
+        simDescription: "Contoh konsep dashboard sistem informasi untuk kebutuhan organisasi.",
+        landingDescription: "Konsep landing page modern untuk brand dan kebutuhan promosi.",
+
+        testimonialsKicker: "TESTIMONI",
+        testimonialsTitle: "Pengalaman project.",
+        testimonialOne: "Tampilan website terlihat lebih modern dan jauh lebih profesional.",
+        testimonialTwo: "Proses pengerjaan dilakukan dengan komunikasi yang jelas dan terstruktur.",
+        testimonialThree: "Website responsive dan nyaman digunakan dari berbagai perangkat.",
+
+        contactKicker: "LET'S WORK TOGETHER",
+        contactTitle: "Punya project?<br>Mari kita buat.",
+        contactDescription: "Ceritakan kebutuhan website Anda dan mari diskusikan konsep yang sesuai.",
+        formName: "Nama",
+        formProject: "Jenis Project",
+        formChoose: "Pilih project",
+        formMessage: "Pesan",
+        formSend: "Kirim ke WhatsApp",
+
+        footerText: "Digital service untuk website modern dan profesional."
+    },
+
+    en: {
+        navHome: "Home",
+        navAbout: "About",
+        navServices: "Services",
+        navProjects: "Projects",
+        navTestimonials: "Testimonials",
+        navContact: "Contact",
+        navStart: "Start Project",
+
+        heroEyebrow: "DIGITAL SERVICE • 2026",
+        heroTitleOne: "Build a",
+        heroTitleTwo: "Professional Website.",
+        heroDescription: "We help businesses, organizations and individuals build modern, fast, responsive websites with a professional digital experience.",
+        heroButton: "Start Project",
+        heroProjects: "View Projects",
+
+        statOne: "Modern Design",
+        statTwo: "Responsive",
+        statThree: "Support",
+
+        visualSmall: "DESIGN",
+        visualDesign: "Modern 2026",
+        readySmall: "PROJECT",
+        readyText: "Ready to Build",
+        screenTitle: "Digital<br>Experience.",
+
+        aboutKicker: "ABOUT HABIBI.ID",
+        aboutTitle: "A website is more than a visual.",
+        aboutText: "HABIBI.ID is a digital service focused on creating websites with modern design, clear structure and a comfortable user experience.",
+        aboutTextTwo: "Every project is developed around business needs, brand identity, responsive layouts and ease of use.",
+
+        aboutItemOne: "Modern Interface",
+        aboutItemOneText: "Clean interfaces following the latest digital design trends.",
+        aboutItemTwo: "Responsive",
+        aboutItemTwoText: "Comfortable on desktop, tablet and smartphone.",
+        aboutItemThree: "Custom Project",
+        aboutItemThreeText: "Built around the needs and goals of each project.",
+
+        servicesKicker: "SERVICES",
+        servicesTitle: "Digital solutions for your needs.",
+
+        serviceOne: "Company Profile",
+        serviceOneText: "Professional websites for companies, businesses and organizations.",
+        serviceTwo: "Landing Page",
+        serviceTwoText: "Modern landing pages for products, services, campaigns or personal brands.",
+        serviceThree: "Information System",
+        serviceThreeText: "Web-based information systems to support operational processes.",
+        serviceFour: "POS & Management",
+        serviceFourText: "Cashier, inventory, transaction, reporting and business management systems.",
+        serviceFive: "UI/UX Website",
+        serviceFiveText: "Modern interface design focused on user experience.",
+        serviceSix: "Maintenance",
+        serviceSixText: "Regular website maintenance, fixes and development.",
+
+        processKicker: "WORK PROCESS",
+        processTitle: "From idea to digital.",
+        processOne: "Discussion",
+        processOneText: "Understanding project needs and goals.",
+        processTwo: "Design",
+        processTwoText: "Creating interface concepts and page structures.",
+        processThree: "Development",
+        processThreeText: "Building the website based on the agreed concept.",
+        processFour: "Launch",
+        processFourText: "Testing, finalization and website launch.",
+
+        projectsKicker: "PORTFOLIO",
+        projectsTitle: "Some Example Projects.",
+        viewProject: "View Project",
+        aanDescription: "An example AAN website project included as part of the HABIBI.ID portfolio.",
+        posDescription: "A modern cashier and business management system concept.",
+        simDescription: "An information system dashboard concept for organizational needs.",
+        landingDescription: "A modern landing page concept for brands and promotional needs.",
+
+        testimonialsKicker: "TESTIMONIALS",
+        testimonialsTitle: "Project experiences.",
+        testimonialOne: "The website looks much more modern and professional.",
+        testimonialTwo: "The development process was handled with clear and structured communication.",
+        testimonialThree: "The website is responsive and comfortable to use across devices.",
+
+        contactKicker: "LET'S WORK TOGETHER",
+        contactTitle: "Have a project?<br>Let's build it.",
+        contactDescription: "Tell us about your website needs and let's discuss the right concept.",
+        formName: "Name",
+        formProject: "Project Type",
+        formChoose: "Choose a project",
+        formMessage: "Message",
+        formSend: "Send to WhatsApp",
+
+        footerText: "Digital service for modern and professional websites."
+    }
+};
+
+
+let currentLanguage = localStorage.getItem("habibi-language") || "id";
+
+function applyLanguage(language) {
+    currentLanguage = language;
+    localStorage.setItem("habibi-language", language);
+
+    document.documentElement.lang = language;
+
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.dataset.i18n;
+
+        if (translations[language][key] !== undefined) {
+            element.innerHTML = translations[language][key];
+        }
+    });
+
+    const active = document.querySelector(".lang-active");
+
+    if (active) {
+        active.textContent = language.toUpperCase();
+    }
+
+    const nameInput = document.getElementById("name");
+    const messageInput = document.getElementById("message");
+
+    if (nameInput) {
+        nameInput.placeholder = language === "id"
+            ? "Nama Anda"
+            : "Your name";
+    }
+
+    if (messageInput) {
+        messageInput.placeholder = language === "id"
+            ? "Ceritakan project Anda..."
+            : "Tell us about your project...";
+    }
+}
+
+
+
+
+/* ============================================================
+   THEME SWITCHER
+   ============================================================ */
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("habibi-theme", theme);
+
+    const icon = document.querySelector(".theme-icon");
+    const label = document.querySelector(".theme-label");
+
+    if (!icon || !label) return;
+
+    if (theme === "white") {
+        icon.textContent = "☀";
+        label.textContent = "WHITE";
+    } else {
+        icon.textContent = "☾";
+        label.textContent = "BLACK";
+    }
+}
+
+function initTheme() {
+    const savedTheme = localStorage.getItem("habibi-theme") || "black";
+    applyTheme(savedTheme);
+
+    const themeSwitch = document.getElementById("themeSwitch");
+
+    if (themeSwitch) {
+        themeSwitch.addEventListener("click", () => {
+            const current =
+                document.documentElement.getAttribute("data-theme") || "black";
+
+            applyTheme(current === "black" ? "white" : "black");
+        });
+    }
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    applyLanguage(currentLanguage);
+    initTheme();
+
+    const loader = document.querySelector(".page-loader");
+
+    setTimeout(() => {
+        loader.classList.add("hide");
+    }, 500);
+
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".nav-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+            navMenu.classList.remove("open");
+        });
+    });
+
+
+    const languageSwitch = document.getElementById("languageSwitch");
+
+    languageSwitch.addEventListener("click", () => {
+        applyLanguage(currentLanguage === "id" ? "en" : "id");
+    });
+
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        },
+        {
+            threshold: .12
+        }
+    );
+
+    document.querySelectorAll(".reveal").forEach((element) => {
+        observer.observe(element);
+    });
+
+
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const project = document.getElementById("project").value;
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !project || !message) {
+            return;
+        }
+
+        let whatsappMessage;
+
+        if (currentLanguage === "id") {
+            whatsappMessage =
+                `Halo HABIBI.ID,%0A%0A` +
+                `Nama: ${encodeURIComponent(name)}%0A` +
+                `Jenis Project: ${encodeURIComponent(project)}%0A%0A` +
+                `Pesan:%0A${encodeURIComponent(message)}`;
+        } else {
+            whatsappMessage =
+                `Hello HABIBI.ID,%0A%0A` +
+                `Name: ${encodeURIComponent(name)}%0A` +
+                `Project Type: ${encodeURIComponent(project)}%0A%0A` +
+                `Message:%0A${encodeURIComponent(message)}`;
+        }
+
+        window.open(
+            `https://wa.me/6281934704296?text=${whatsappMessage}`,
+            "_blank"
+        );
+    });
+
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+});

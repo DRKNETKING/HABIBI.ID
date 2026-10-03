@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HABIBI.ID — Jasa Website Profesional</title>
+    <meta name="description" content="HABIBI.ID menyediakan jasa pembuatan website profesional, landing page, sistem informasi, POS, UI/UX dan maintenance website.">
+    <meta name="theme-color" content="#07080c">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<div class="page-loader">
+    <div class="loader-logo">H</div>
+</div>
+
+<header class="navbar">
+    <div class="container nav-inner">
+
+        <a href="#home" class="brand">
+            <span class="brand-icon">H</span>
+            <span>HABIBI<span>.ID</span></span>
+        </a>
+
+        <nav class="nav-menu" id="navMenu">
+            <a href="#home" data-i18n="navHome">Beranda</a>
+            <a href="#about" data-i18n="navAbout">Tentang</a>
+            <a href="#services" data-i18n="navServices">Layanan</a>
+            <a href="#projects" data-i18n="navProjects">Project</a>
+            <a href="#testimonials" data-i18n="navTestimonials">Testimoni</a>
+            <a href="#contact" data-i18n="navContact">Kontak</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <button class="theme-switch" id="themeSwitch" type="button" aria-label="Change theme">
+                <span class="theme-icon">☾</span>
+                <span class="theme-label">BLACK</span>
+            </button>
+
+            <button class="language-switch" id="languageSwitch" type="button">
+                <span class="lang-active">ID</span>
+                <span>/</span>
+                <span>EN</span>
+            </button>
+
+            <a href="#contact" class="nav-cta" data-i18n="navStart">
+                Mulai Project
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+    </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <div class="hero-grid"></div>
+    <div class="hero-glow glow-one"></div>
+    <div class="hero-glow glow-two"></div>
+
+    <div class="container hero-content">
+
+        <div class="hero-copy reveal">
+            <div class="eyebrow">
+                <span class="status-dot"></span>
+                <span data-i18n="heroEyebrow">DIGITAL SERVICE • 2026</span>
+            </div>
+
+            <h1>
+                <span data-i18n="heroTitleOne">Bangun Website</span>
+                <span class="gradient-text" data-i18n="heroTitleTwo">Profesional.</span>
+            </h1>
+
+            <p data-i18n="heroDescription">
+                Kami membantu bisnis, UMKM, organisasi dan personal membangun website modern yang cepat, responsive dan memiliki tampilan profesional.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <span data-i18n="heroButton">Mulai Project</span>
+                    <span class="arrow">↗</span>
+                </a>
+
+                <a href="#projects" class="btn btn-secondary">
+                    <span data-i18n="heroProjects">Lihat Project</span>
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <strong>2026</strong>
+                    <span data-i18n="statOne">Modern Design</span>
+                </div>
+                <div>
+                    <strong>100%</strong>
+                    <span data-i18n="statTwo">Responsive</span>
+                </div>
+                <div>
+                    <strong>24/7</strong>
+                    <span data-i18n="statThree">Support</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual reveal">
+            <div class="floating-card card-top">
+                <span class="mini-icon">✦</span>
+                <div>
+                    <small data-i18n="visualSmall">DESIGN</small>
+                    <strong data-i18n="visualDesign">Modern 2026</strong>
+                </div>
+            </div>
+
+            <div class="browser-window">
+                <div class="browser-bar">
+                    <div class="browser-dots">
+                        <i></i><i></i><i></i>
+                    </div>
+                    <span>habibi.id</span>
+                </div>
+
+                <div class="browser-screen">
+                    <div class="screen-label">HABIBI.ID</div>
+                    <div class="screen-title" data-i18n="screenTitle">
+                        Digital<br>Experience.
+                    </div>
+                    <div class="screen-line"></div>
+                    <div class="screen-cards">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="floating-card card-bottom">
+                <span class="check-icon">✓</span>
+                <div>
+                    <small data-i18n="readySmall">PROJECT</small>
+                    <strong data-i18n="readyText">Ready to Build</strong>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="about section" id="about">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <span class="section-number">01</span>
+            <div>
+                <span class="section-kicker" data-i18n="aboutKicker">TENTANG HABIBI.ID</span>
+                <h2 data-i18n="aboutTitle">Website bukan hanya tampilan.</h2>
+            </div>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-main reveal">
+                <p class="large-text" data-i18n="aboutText">
+                    HABIBI.ID adalah layanan digital untuk membantu menghadirkan website yang memiliki desain modern, struktur yang jelas dan pengalaman pengguna yang nyaman.
+                </p>
+
+                <p data-i18n="aboutTextTwo">
+                    Setiap project dibuat dengan memperhatikan kebutuhan bisnis, identitas brand, responsive layout dan kemudahan penggunaan.
+                </p>
+            </div>
+
+            <div class="about-list reveal">
+                <div class="about-item">
+                    <span>01</span>
+                    <div>
+                        <strong data-i18n="aboutItemOne">Modern Interface</strong>
+                        <p data-i18n="aboutItemOneText">Tampilan clean dan mengikuti tren digital terbaru.</p>
+                    </div>
+                </div>
+
+                <div class="about-item">
+                    <span>02</span>
+                    <div>
+                        <strong data-i18n="aboutItemTwo">Responsive</strong>
+                        <p data-i18n="aboutItemTwoText">Nyaman digunakan melalui desktop, tablet dan smartphone.</p>
+                    </div>
+                </div>
+
+                <div class="about-item">
+                    <span>03</span>
+                    <div>
+                        <strong data-i18n="aboutItemThree">Custom Project</strong>
+                        <p data-i18n="aboutItemThreeText">Dibangun berdasarkan kebutuhan dan tujuan project.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="services section" id="services">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <span class="section-number">02</span>
+            <div>
+                <span class="section-kicker" data-i18n="servicesKicker">LAYANAN</span>
+                <h2 data-i18n="servicesTitle">Solusi digital untuk kebutuhan Anda.</h2>
+            </div>
+        </div>
+
+        <div class="services-grid">
+
+            <article class="service-card reveal">
+                <span class="service-number">01</span>
+                <div class="service-icon">⌘</div>
+                <h3 data-i18n="serviceOne">Company Profile</h3>
+                <p data-i18n="serviceOneText">Website profesional untuk memperkenalkan perusahaan, bisnis atau organisasi.</p>
+                <span class="service-link">01 — WEBSITE</span>
+            </article>
+
+            <article class="service-card reveal">
+                <span class="service-number">02</span>
+                <div class="service-icon">↗</div>
+                <h3 data-i18n="serviceTwo">Landing Page</h3>
+                <p data-i18n="serviceTwoText">Landing page modern untuk promosi produk, jasa, campaign atau personal brand.</p>
+                <span class="service-link">02 — MARKETING</span>
+            </article>
+
+            <article class="service-card reveal">
+                <span class="service-number">03</span>
+                <div class="service-icon">▦</div>
+                <h3 data-i18n="serviceThree">Sistem Informasi</h3>
+                <p data-i18n="serviceThreeText">Sistem informasi berbasis web untuk membantu proses operasional.</p>
+                <span class="service-link">03 — SYSTEM</span>
+            </article>
+
+            <article class="service-card reveal">
+                <span class="service-number">04</span>
+                <div class="service-icon">▣</div>
+                <h3 data-i18n="serviceFour">POS & Management</h3>
+                <p data-i18n="serviceFourText">Aplikasi kasir, stok, transaksi, laporan dan manajemen bisnis.</p>
+                <span class="service-link">04 — BUSINESS</span>
+            </article>
+
+            <article class="service-card reveal">
+                <span class="service-number">05</span>
+                <div class="service-icon">◈</div>
+                <h3 data-i18n="serviceFive">UI/UX Website</h3>
+                <p data-i18n="serviceFiveText">Perancangan interface modern dengan fokus pada pengalaman pengguna.</p>
+                <span class="service-link">05 — DESIGN</span>
+            </article>
+
+            <article class="service-card reveal">
+                <span class="service-number">06</span>
+                <div class="service-icon">↻</div>
+                <h3 data-i18n="serviceSix">Maintenance</h3>
+                <p data-i18n="serviceSixText">Perawatan, perbaikan dan pengembangan website secara berkala.</p>
+                <span class="service-link">06 — SUPPORT</span>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="process section">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <span class="section-number">03</span>
+            <div>
+                <span class="section-kicker" data-i18n="processKicker">PROSES KERJA</span>
+                <h2 data-i18n="processTitle">Dari ide menjadi digital.</h2>
+            </div>
+        </div>
+
+        <div class="process-grid">
+
+            <div class="process-item reveal">
+                <span>01</span>
+                <h3 data-i18n="processOne">Diskusi</h3>
+                <p data-i18n="processOneText">Memahami kebutuhan dan tujuan project.</p>
+            </div>
+
+            <div class="process-item reveal">
+                <span>02</span>
+                <h3 data-i18n="processTwo">Design</h3>
+                <p data-i18n="processTwoText">Menyusun konsep interface dan struktur halaman.</p>
+            </div>
+
+            <div class="process-item reveal">
+                <span>03</span>
+                <h3 data-i18n="processThree">Development</h3>
+                <p data-i18n="processThreeText">Mengembangkan website sesuai konsep yang disepakati.</p>
+            </div>
+
+            <div class="process-item reveal">
+                <span>04</span>
+                <h3 data-i18n="processFour">Launch</h3>
+                <p data-i18n="processFourText">Testing, finalisasi dan website siap digunakan.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="projects section" id="projects">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <span class="section-number">04</span>
+            <div>
+                <span class="section-kicker" data-i18n="projectsKicker">PORTFOLIO</span>
+                <h2 data-i18n="projectsTitle">Beberapa Contoh Project.</h2>
+            </div>
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- PROJECT AAN -->
+            <article class="project-card project-featured reveal">
+                <div class="project-preview aan-preview">
+                    <div class="project-browser">
+                        <div class="project-browser-top">
+                            <div class="browser-dots">
+                                <i></i><i></i><i></i>
+                            </div>
+                            <span>AAN PROJECT</span>
+                        </div>
+
+                        <div class="aan-content">
+                            <div class="aan-badge">AAN</div>
+                            <div class="aan-title">Digital<br>Website</div>
+                            <div class="aan-lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span>01</span>
+                        <span>WEBSITE</span>
+                    </div>
+
+                    <h3>Website AAN</h3>
+
+                    <p data-i18n="aanDescription">
+                        Contoh project website AAN yang menjadi bagian dari portfolio HABIBI.ID.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Website</span>
+                        <span>Responsive</span>
+                        <span>Modern</span>
+                    </div>
+
+                    <a href="aan-preview.html" class="project-view" data-i18n="viewProject">
+                        Lihat Project <span>↗</span>
+                    </a>
+                </div>
+            </article>
+
+
+            <!-- PROJECT POS -->
+            <article class="project-card reveal">
+                <div class="project-preview pos-preview">
+                    <div class="mock-dashboard">
+                        <div class="mock-sidebar">
+                            <b>POS</b>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="mock-main">
+                            <small>Dashboard</small>
+                            <strong>Rp1.100.000</strong>
+                            <div class="mock-boxes">
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span>02</span>
+                        <span>SYSTEM</span>
+                    </div>
+
+                    <h3>POS Management</h3>
+
+                    <div class="project-price">Rp1.100.000</div>
+
+                    <p data-i18n="posDescription">
+                        Konsep sistem kasir dan manajemen bisnis modern.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>POS</span>
+                        <span>Dashboard</span>
+                        <span>Management</span>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- PROJECT SIM -->
+            <article class="project-card reveal">
+                <div class="project-preview sim-preview">
+                    <div class="sim-interface">
+                        <div class="sim-top">
+                            <b>SIM</b>
+                            <span>2026</span>
+                        </div>
+                        <div class="sim-stat">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                        <div class="sim-chart">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span>03</span>
+                        <span>SYSTEM</span>
+                    </div>
+
+                    <h3>Sistem Informasi</h3>
+
+                    <p data-i18n="simDescription">
+                        Contoh konsep dashboard sistem informasi untuk kebutuhan organisasi.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Dashboard</span>
+                        <span>Database</span>
+                        <span>Web App</span>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- PROJECT LANDING PAGE -->
+            <article class="project-card reveal">
+                <div class="project-preview landing-preview">
+                    <div class="landing-interface">
+                        <div class="landing-logo">HABIBI</div>
+                        <div class="landing-big">CREATE<br><em>BETTER.</em></div>
+                        <div class="landing-button">EXPLORE →</div>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span>04</span>
+                        <span>LANDING PAGE</span>
+                    </div>
+
+                    <h3>Modern Landing Page</h3>
+
+                    <p data-i18n="landingDescription">
+                        Konsep landing page modern untuk brand dan kebutuhan promosi.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Landing</span>
+                        <span>UI/UX</span>
+                        <span>Marketing</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="testimonials section" id="testimonials">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <span class="section-number">05</span>
+            <div>
+                <span class="section-kicker" data-i18n="testimonialsKicker">TESTIMONI</span>
+                <h2 data-i18n="testimonialsTitle">Pengalaman project.</h2>
+            </div>
+        </div>
+
+        <div class="testimonial-grid">
+
+            <article class="testimonial reveal">
+                <div class="quote">“</div>
+                <p data-i18n="testimonialOne">
+                    Tampilan website terlihat lebih modern dan jauh lebih profesional.
+                </p>
+                <div class="testimonial-user">
+                    <div class="avatar">A</div>
+                    <div>
+                        <strong>Client Project</strong>
+                        <span>Website Development</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="testimonial reveal">
+                <div class="quote">“</div>
+                <p data-i18n="testimonialTwo">
+                    Proses pengerjaan dilakukan dengan komunikasi yang jelas dan terstruktur.
+                </p>
+                <div class="testimonial-user">
+                    <div class="avatar">B</div>
+                    <div>
+                        <strong>Business Project</strong>
+                        <span>Digital Service</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="testimonial reveal">
+                <div class="quote">“</div>
+                <p data-i18n="testimonialThree">
+                    Website responsive dan nyaman digunakan dari berbagai perangkat.
+                </p>
+                <div class="testimonial-user">
+                    <div class="avatar">C</div>
+                    <div>
+                        <strong>Personal Project</strong>
+                        <span>Web Design</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="contact section" id="contact">
+    <div class="container">
+
+        <div class="contact-box reveal">
+
+            <div class="contact-copy">
+                <span class="section-kicker" data-i18n="contactKicker">LET'S WORK TOGETHER</span>
+
+                <h2 data-i18n="contactTitle">
+                    Punya project?<br>
+                    Mari kita buat.
+                </h2>
+
+                <p data-i18n="contactDescription">
+                    Ceritakan kebutuhan website Anda dan mari diskusikan konsep yang sesuai.
+                </p>
+
+                <a class="contact-whatsapp" href="https://wa.me/6281934704296" target="_blank" rel="noopener">
+                    <span>WhatsApp</span>
+                    <b>↗</b>
+                </a>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+
+                <label>
+                    <span data-i18n="formName">Nama</span>
+                    <input type="text" id="name" placeholder="Nama Anda" required>
+                </label>
+
+                <label>
+                    <span data-i18n="formProject">Jenis Project</span>
+                    <select id="project" required>
+                        <option value="" data-i18n="formChoose">Pilih project</option>
+                        <option value="Company Profile">Company Profile</option>
+                        <option value="Landing Page">Landing Page</option>
+                        <option value="Sistem Informasi">Sistem Informasi</option>
+                        <option value="POS & Management">POS & Management</option>
+                        <option value="UI/UX Website">UI/UX Website</option>
+                        <option value="Maintenance">Maintenance</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span data-i18n="formMessage">Pesan</span>
+                    <textarea id="message" rows="5" placeholder="Ceritakan project Anda..." required></textarea>
+                </label>
+
+                <button type="submit" class="btn btn-primary submit-btn">
+                    <span data-i18n="formSend">Kirim ke WhatsApp</span>
+                    <span>↗</span>
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+
+<footer class="footer">
+    <div class="container footer-inner">
+
+        <div>
+            <a href="#home" class="brand footer-brand">
+                <span class="brand-icon">H</span>
+                <span>HABIBI<span>.ID</span></span>
+            </a>
+            <p data-i18n="footerText">Digital service untuk website modern dan profesional.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="#services" data-i18n="navServices">Layanan</a>
+            <a href="#projects" data-i18n="navProjects">Project</a>
+            <a href="#contact" data-i18n="navContact">Kontak</a>
+        </div>
+
+        <div class="footer-copy">
+            © <span id="year"></span> HABIBI.ID
+        </div>
+
+    </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>

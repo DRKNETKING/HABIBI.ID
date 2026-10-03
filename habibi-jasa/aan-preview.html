@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Website AAN — HABIBI.ID Portfolio</title>
+    <meta name="description" content="Preview project Website AAN dari portfolio HABIBI.ID.">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Inter, Arial, sans-serif;
+            background:
+                radial-gradient(circle at 80% 0%, rgba(255,255,255,.10), transparent 30%),
+                #07080c;
+            color: #fff;
+        }
+
+        .topbar {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 6vw;
+            border-bottom: 1px solid rgba(255,255,255,.09);
+            background: rgba(7,8,12,.8);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            letter-spacing: -.5px;
+        }
+
+        .logo-icon {
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            background: #fff;
+            color: #08090d;
+        }
+
+        .back {
+            color: #a2a7b1;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .back:hover {
+            color: #fff;
+        }
+
+        .hero {
+            width: min(1100px, calc(100% - 40px));
+            margin: auto;
+            min-height: calc(100vh - 72px);
+            display: grid;
+            place-items: center;
+            padding: 70px 0;
+        }
+
+        .preview {
+            width: 100%;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 28px;
+            overflow: hidden;
+            background: #0d0f14;
+            box-shadow: 0 40px 120px rgba(0,0,0,.5);
+        }
+
+        .browser {
+            height: 48px;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #696f7a;
+            font-size: 10px;
+            position: relative;
+        }
+
+        .dots {
+            position: absolute;
+            left: 18px;
+            display: flex;
+            gap: 6px;
+        }
+
+        .dots i {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #343841;
+        }
+
+        .site {
+            min-height: 590px;
+            padding: 70px;
+            background:
+                radial-gradient(circle at 80% 10%, rgba(255,255,255,.10), transparent 25%),
+                linear-gradient(135deg, #15181f, #08090d);
+        }
+
+        .badge {
+            display: inline-flex;
+            padding: 9px 13px;
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 100px;
+            color: #a2a7b0;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+        }
+
+        h1 {
+            font-family: Arial, sans-serif;
+            font-size: clamp(54px, 8vw, 100px);
+            line-height: .9;
+            letter-spacing: -6px;
+            margin-top: 32px;
+            max-width: 800px;
+        }
+
+        h1 span {
+            display: block;
+            color: #8d929d;
+        }
+
+        .description {
+            max-width: 520px;
+            color: #999faa;
+            line-height: 1.7;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .button {
+            display: inline-flex;
+            padding: 13px 19px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .primary {
+            background: #fff;
+            color: #08090d;
+        }
+
+        .secondary {
+            border: 1px solid rgba(255,255,255,.17);
+            color: #fff;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 70px;
+        }
+
+        .feature {
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 15px;
+            background: rgba(255,255,255,.025);
+        }
+
+        .feature strong {
+            display: block;
+            font-size: 13px;
+        }
+
+        .feature span {
+            display: block;
+            color: #686e79;
+            font-size: 10px;
+            margin-top: 6px;
+        }
+
+        .note {
+            width: min(1100px, calc(100% - 40px));
+            margin: -30px auto 60px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 16px;
+            color: #777d88;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+
+            .topbar {
+                padding: 0 20px;
+            }
+
+            .hero {
+                width: min(100% - 24px, 1100px);
+                padding: 35px 0;
+            }
+
+            .site {
+                padding: 40px 25px;
+                min-height: 580px;
+            }
+
+            h1 {
+                font-size: 55px;
+                letter-spacing: -4px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                margin-top: 50px;
+            }
+
+            .note {
+                width: calc(100% - 24px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <a href="index.html" class="logo">
+        <span class="logo-icon">H</span>
+        <span>HABIBI.ID</span>
+    </a>
+
+    <a href="index.html#projects" class="back">
+        ← Kembali ke Portfolio
+    </a>
+</header>
+
+<main>
+
+    <section class="hero">
+
+        <div class="preview">
+
+            <div class="browser">
+                <div class="dots">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+
+                aan-project.website
+            </div>
+
+            <div class="site">
+
+                <span class="badge">AAN PROJECT • WEBSITE</span>
+
+                <h1>
+                    AAN
+                    <span>Digital Experience.</span>
+                </h1>
+
+                <p class="description">
+                    Contoh preview project Website AAN yang ditampilkan
+                    sebagai bagian dari portfolio HABIBI.ID.
+                    Konsep dibuat dengan pendekatan modern, clean,
+                    responsive dan profesional.
+                </p>
+
+                <div class="buttons">
+                    <a href="index.html#contact" class="button primary">
+                        Request Similar Website ↗
+                    </a>
+
+                    <a href="index.html#projects" class="button secondary">
+                        More Projects
+                    </a>
+                </div>
+
+                <div class="features">
+
+                    <div class="feature">
+                        <strong>Modern UI</strong>
+                        <span>Clean & contemporary interface</span>
+                    </div>
+
+                    <div class="feature">
+                        <strong>Responsive</strong>
+                        <span>Desktop, tablet & mobile</span>
+                    </div>
+
+                    <div class="feature">
+                        <strong>Custom</strong>
+                        <span>Built around project needs</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="note">
+        Project AAN pada halaman ini adalah halaman preview portfolio.
+        File backup <strong>WEBSITE-KULKAS-AAN.zip</strong> di root repository
+        tetap tidak diubah.
+    </div>
+
+</main>
+
+</body>
+</html>

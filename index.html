@@ -3,10 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="HABIBI.ID - Digital Solution untuk bisnis, brand, toko dan personal project.">
+<meta name="description" content="HABIBI.ID - Digital Solution untuk bisnis, brand, toko, organisasi dan personal project.">
+
 <title>HABIBI.ID — Digital Solution</title>
 
+<!-- FAVICON HABIBI.ID -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23050505'/%3E%3Ctext x='50' y='67' text-anchor='middle' font-family='Arial' font-size='45' font-weight='900' fill='white'%3EH%3C/text%3E%3C/svg%3E">
+
 <style>
+:root{
+    --bg:#050505;
+    --bg2:#0b0b0b;
+    --card:#101010;
+    --text:#ffffff;
+    --muted:#929292;
+    --border:#292929;
+    --soft:#181818;
+    --button:#ffffff;
+    --button-text:#000000;
+    --shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+body.light{
+    --bg:#f5f5f5;
+    --bg2:#ffffff;
+    --card:#ffffff;
+    --text:#111111;
+    --muted:#666666;
+    --border:#dddddd;
+    --soft:#eeeeee;
+    --button:#111111;
+    --button-text:#ffffff;
+    --shadow:0 20px 60px rgba(0,0,0,.08);
+}
+
 *{
     margin:0;
     padding:0;
@@ -19,10 +49,13 @@ html{
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#050505;
-    color:#fff;
+    background:var(--bg);
+    color:var(--text);
     line-height:1.6;
     overflow-x:hidden;
+    transition:
+        background .3s ease,
+        color .3s ease;
 }
 
 a{
@@ -39,15 +72,24 @@ button{
     margin:auto;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 header{
     position:fixed;
     top:0;
     left:0;
     right:0;
-    z-index:1000;
-    background:rgba(5,5,5,.88);
-    border-bottom:1px solid #222;
-    backdrop-filter:blur(14px);
+    z-index:9999;
+    background:rgba(5,5,5,.86);
+    border-bottom:1px solid var(--border);
+    backdrop-filter:blur(18px);
+    transition:.3s;
+}
+
+body.light header{
+    background:rgba(255,255,255,.88);
 }
 
 .navbar{
@@ -55,51 +97,93 @@ header{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:30px;
+    gap:25px;
 }
 
 .logo{
-    font-size:22px;
+    font-size:23px;
     font-weight:900;
-    letter-spacing:-1px;
+    letter-spacing:-1.2px;
 }
 
 .logo span{
-    color:#888;
+    color:var(--muted);
 }
 
 .nav{
     display:flex;
     align-items:center;
-    gap:25px;
+    gap:23px;
     font-size:14px;
 }
 
 .nav a{
-    color:#aaa;
+    color:var(--muted);
     transition:.25s;
 }
 
 .nav a:hover{
-    color:#fff;
+    color:var(--text);
 }
 
 .nav-button{
-    padding:11px 18px;
-    border:1px solid #444;
+    padding:10px 17px;
+    border:1px solid var(--border);
     border-radius:30px;
-    color:#fff !important;
 }
+
+.controls{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.control-btn{
+    width:40px;
+    height:40px;
+    border:1px solid var(--border);
+    border-radius:50%;
+    background:transparent;
+    color:var(--text);
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.25s;
+}
+
+.control-btn:hover{
+    background:var(--soft);
+}
+
+.lang-btn{
+    width:auto;
+    padding:0 13px;
+    border-radius:22px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
     min-height:100vh;
     display:flex;
     align-items:center;
-    padding:130px 0 80px;
+    padding:135px 0 90px;
     background:
-        radial-gradient(circle at 80% 20%,rgba(255,255,255,.09),transparent 30%),
-        radial-gradient(circle at 15% 70%,rgba(255,255,255,.05),transparent 30%),
-        #050505;
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(130,130,130,.13),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 15% 75%,
+            rgba(130,130,130,.07),
+            transparent 30%
+        );
 }
 
 .hero-grid{
@@ -110,7 +194,7 @@ header{
 }
 
 .label{
-    color:#999;
+    color:var(--muted);
     font-size:12px;
     letter-spacing:3px;
     margin-bottom:22px;
@@ -118,19 +202,20 @@ header{
 }
 
 .hero h1{
-    font-size:clamp(48px,7vw,92px);
-    line-height:.95;
+    font-size:clamp(48px,7vw,90px);
+    line-height:.96;
     letter-spacing:-5px;
     max-width:850px;
     margin-bottom:28px;
 }
 
 .hero h1 span{
-    color:#777;
+    color:var(--muted);
+    display:block;
 }
 
 .hero-text{
-    color:#aaa;
+    color:var(--muted);
     font-size:18px;
     max-width:650px;
     margin-bottom:35px;
@@ -147,49 +232,69 @@ header{
     align-items:center;
     justify-content:center;
     padding:14px 23px;
-    border-radius:5px;
-    border:1px solid #444;
+    border-radius:6px;
+    border:1px solid var(--border);
     transition:.25s;
 }
 
 .btn-primary{
-    background:#fff;
-    color:#000;
-    border-color:#fff;
+    background:var(--button);
+    color:var(--button-text);
+    border-color:var(--button);
 }
 
 .btn-primary:hover{
-    transform:translateY(-2px);
+    transform:translateY(-3px);
+    box-shadow:var(--shadow);
 }
 
 .btn-secondary:hover{
-    background:#151515;
+    background:var(--soft);
 }
 
+/* HERO CARD */
+
 .hero-card{
-    border:1px solid #292929;
-    background:linear-gradient(145deg,#151515,#080808);
     min-height:470px;
     padding:30px;
     position:relative;
     overflow:hidden;
+    border:1px solid var(--border);
+    background:
+        linear-gradient(
+            145deg,
+            var(--card),
+            var(--bg)
+        );
+    box-shadow:var(--shadow);
 }
 
 .hero-card:before{
     content:"";
     position:absolute;
-    width:250px;
-    height:250px;
-    border:1px solid #333;
+    width:260px;
+    height:260px;
+    border:1px solid var(--border);
     border-radius:50%;
-    right:-100px;
+    right:-110px;
     top:-80px;
+}
+
+.hero-card:after{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    border:1px solid var(--border);
+    border-radius:50%;
+    left:-80px;
+    bottom:-60px;
 }
 
 .card-top{
     display:flex;
     justify-content:space-between;
-    color:#777;
+    color:var(--muted);
     font-size:12px;
     letter-spacing:2px;
 }
@@ -203,19 +308,19 @@ header{
 }
 
 .card-center small{
-    color:#777;
+    color:var(--muted);
     letter-spacing:3px;
 }
 
 .card-center h2{
-    font-size:56px;
+    font-size:58px;
     line-height:1;
     margin:14px 0;
-    letter-spacing:-3px;
+    letter-spacing:-4px;
 }
 
 .card-center p{
-    color:#888;
+    color:var(--muted);
 }
 
 .card-bottom{
@@ -229,30 +334,34 @@ header{
 }
 
 .mini{
-    border-top:1px solid #333;
+    border-top:1px solid var(--border);
     padding-top:10px;
-    color:#888;
+    color:var(--muted);
     font-size:12px;
 }
 
 .mini strong{
     display:block;
-    color:#fff;
+    color:var(--text);
     font-size:18px;
 }
 
+/* =========================
+   GENERAL SECTION
+========================= */
+
 section{
     padding:120px 0;
-    border-top:1px solid #181818;
+    border-top:1px solid var(--border);
 }
 
 .section-head{
-    max-width:760px;
+    max-width:800px;
     margin-bottom:60px;
 }
 
 .section-number{
-    color:#666;
+    color:var(--muted);
     font-size:12px;
     letter-spacing:3px;
     margin-bottom:15px;
@@ -266,10 +375,14 @@ section{
 }
 
 .section-desc{
-    color:#888;
+    color:var(--muted);
     font-size:17px;
-    max-width:650px;
+    max-width:680px;
 }
+
+/* =========================
+   ABOUT
+========================= */
 
 .about-grid{
     display:grid;
@@ -278,13 +391,13 @@ section{
 }
 
 .about-text{
-    color:#999;
+    color:var(--muted);
     font-size:18px;
 }
 
 .about-text h3{
-    color:#fff;
-    font-size:28px;
+    color:var(--text);
+    font-size:30px;
     margin-bottom:18px;
 }
 
@@ -295,13 +408,19 @@ section{
 }
 
 .feature{
-    border:1px solid #262626;
+    border:1px solid var(--border);
     padding:28px;
     min-height:190px;
+    background:var(--card);
+    transition:.25s;
+}
+
+.feature:hover{
+    transform:translateY(-4px);
 }
 
 .feature-number{
-    color:#555;
+    color:var(--muted);
     font-size:13px;
     margin-bottom:45px;
 }
@@ -311,31 +430,37 @@ section{
 }
 
 .feature p{
-    color:#777;
+    color:var(--muted);
     font-size:14px;
 }
+
+/* =========================
+   SERVICES
+========================= */
 
 .services{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    border-top:1px solid #252525;
-    border-left:1px solid #252525;
+    border-top:1px solid var(--border);
+    border-left:1px solid var(--border);
 }
 
 .service{
     padding:32px;
-    min-height:270px;
-    border-right:1px solid #252525;
-    border-bottom:1px solid #252525;
+    min-height:280px;
+    border-right:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    background:var(--bg);
     transition:.25s;
 }
 
 .service:hover{
-    background:#101010;
+    background:var(--card);
+    transform:translateY(-3px);
 }
 
 .service-number{
-    color:#555;
+    color:var(--muted);
     margin-bottom:35px;
 }
 
@@ -350,15 +475,19 @@ section{
 }
 
 .service p{
-    color:#777;
+    color:var(--muted);
     font-size:14px;
     margin-bottom:22px;
 }
 
 .service a{
-    color:#fff;
+    color:var(--text);
     font-size:13px;
 }
+
+/* =========================
+   PROJECTS
+========================= */
 
 .projects{
     display:grid;
@@ -368,16 +497,26 @@ section{
 
 .project{
     min-height:320px;
-    border:1px solid #282828;
+    border:1px solid var(--border);
     padding:30px;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-    background:linear-gradient(145deg,#111,#070707);
+    background:linear-gradient(
+        145deg,
+        var(--card),
+        var(--bg)
+    );
+    transition:.25s;
+}
+
+.project:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow);
 }
 
 .project-tag{
-    color:#666;
+    color:var(--muted);
     font-size:11px;
     letter-spacing:2px;
 }
@@ -385,28 +524,33 @@ section{
 .project h3{
     font-size:32px;
     letter-spacing:-1px;
+    margin-top:10px;
 }
 
 .project p{
-    color:#777;
+    color:var(--muted);
     margin-top:8px;
 }
 
 .project a{
     display:inline-block;
     margin-top:25px;
-    color:#fff;
+    color:var(--text);
 }
+
+/* =========================
+   PROCESS
+========================= */
 
 .process{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    border-top:1px solid #292929;
+    border-top:1px solid var(--border);
 }
 
 .process-item{
     padding:30px 20px;
-    border-right:1px solid #292929;
+    border-right:1px solid var(--border);
 }
 
 .process-item:last-child{
@@ -415,7 +559,7 @@ section{
 
 .process-number{
     font-size:12px;
-    color:#666;
+    color:var(--muted);
     margin-bottom:45px;
 }
 
@@ -424,9 +568,13 @@ section{
 }
 
 .process-item p{
-    color:#777;
+    color:var(--muted);
     font-size:14px;
 }
+
+/* =========================
+   TESTIMONIAL
+========================= */
 
 .testimonials{
     display:grid;
@@ -435,16 +583,21 @@ section{
 }
 
 .quote{
-    border:1px solid #282828;
+    border:1px solid var(--border);
     padding:30px;
-    color:#999;
+    color:var(--muted);
+    background:var(--card);
 }
 
 .quote strong{
     display:block;
-    color:#fff;
+    color:var(--text);
     margin-top:25px;
 }
+
+/* =========================
+   CONTACT
+========================= */
 
 .contact{
     text-align:center;
@@ -457,9 +610,14 @@ section{
 }
 
 .contact-box{
-    border:1px solid #292929;
+    border:1px solid var(--border);
     padding:55px 25px;
-    background:linear-gradient(145deg,#111,#070707);
+    background:linear-gradient(
+        145deg,
+        var(--card),
+        var(--bg)
+    );
+    box-shadow:var(--shadow);
 }
 
 .contact-box h3{
@@ -469,14 +627,18 @@ section{
 }
 
 .contact-box p{
-    color:#777;
+    color:var(--muted);
     margin-bottom:28px;
 }
 
+/* =========================
+   FOOTER
+========================= */
+
 footer{
-    border-top:1px solid #222;
+    border-top:1px solid var(--border);
     padding:35px 0;
-    color:#666;
+    color:var(--muted);
 }
 
 .footer-content{
@@ -486,10 +648,15 @@ footer{
 }
 
 .footer-content strong{
-    color:#fff;
+    color:var(--text);
 }
 
-@media(max-width:900px){
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1000px){
+
     .nav{
         display:none;
     }
@@ -500,7 +667,7 @@ footer{
     }
 
     .hero-card{
-        min-height:400px;
+        min-height:420px;
     }
 
     .services{
@@ -512,11 +679,29 @@ footer{
     }
 
     .process-item{
-        border-bottom:1px solid #292929;
+        border-bottom:1px solid var(--border);
     }
 }
 
-@media(max-width:600px){
+@media(max-width:650px){
+
+    .navbar{
+        min-height:68px;
+    }
+
+    .logo{
+        font-size:19px;
+    }
+
+    .controls{
+        gap:5px;
+    }
+
+    .control-btn{
+        width:36px;
+        height:36px;
+    }
+
     .hero{
         padding-top:110px;
     }
@@ -532,6 +717,11 @@ footer{
 
     section{
         padding:85px 0;
+    }
+
+    .section-title{
+        font-size:42px;
+        letter-spacing:-2px;
     }
 
     .features,
@@ -551,7 +741,15 @@ footer{
     }
 
     .card-center h2{
-        font-size:42px;
+        font-size:44px;
+    }
+
+    .card-bottom{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+
+    .contact-box h3{
+        font-size:32px;
     }
 }
 </style>
@@ -559,304 +757,1230 @@ footer{
 
 <body>
 
-<header>
-    <div class="container navbar">
-        <a href="#home" class="logo">HABIBI<span>.ID</span></a>
+<!-- =========================
+     HEADER
+========================= -->
 
-        <nav class="nav">
-            <a href="#home">Beranda</a>
-            <a href="#about">Tentang</a>
-            <a href="#services">Layanan</a>
-            <a href="#projects">Portfolio</a>
-            <a href="#testimonials">Testimoni</a>
-            <a href="#contact">Kontak</a>
-            <a href="#contact" class="nav-button">Mulai Project</a>
-        </nav>
-    </div>
+<header>
+<div class="container navbar">
+
+<a href="#home" class="logo">
+HABIBI<span>.ID</span>
+</a>
+
+<nav class="nav">
+
+<a href="#home" data-id="navHome">Beranda</a>
+<a href="#about" data-id="navAbout">Tentang</a>
+<a href="#services" data-id="navServices">Layanan</a>
+<a href="#projects" data-id="navProjects">Portfolio</a>
+<a href="#testimonials" data-id="navTestimonials">Testimoni</a>
+<a href="#contact" data-id="navContact">Kontak</a>
+
+<a href="#contact" class="nav-button" data-id="navStart">
+Mulai Project
+</a>
+
+</nav>
+
+<div class="controls">
+
+<button
+    class="control-btn lang-btn"
+    id="languageButton"
+    type="button"
+    aria-label="Change language">
+ID / EN
+</button>
+
+<button
+    class="control-btn"
+    id="themeButton"
+    type="button"
+    aria-label="Change theme">
+☾
+</button>
+
+</div>
+
+</div>
 </header>
+
+<!-- =========================
+     MAIN
+========================= -->
 
 <main>
 
+<!-- HERO -->
+
 <section class="hero" id="home">
-    <div class="container hero-grid">
 
-        <div>
-            <div class="label">Digital Solution • 2026</div>
+<div class="container hero-grid">
 
-            <h1>
-                Website Profesional
-                <span>untuk Bisnis yang Ingin Tumbuh.</span>
-            </h1>
+<div>
 
-            <p class="hero-text">
-                Bangun identitas digital yang modern, cepat, responsive,
-                dan profesional untuk membuat bisnis kamu terlihat lebih terpercaya.
-            </p>
+<div class="label" data-id="heroLabel">
+DIGITAL SOLUTION • 2026
+</div>
 
-            <div class="actions">
-                <a href="#contact" class="btn btn-primary">Konsultasi Gratis ↗</a>
-                <a href="#projects" class="btn btn-secondary">Lihat Portfolio ↓</a>
-            </div>
-        </div>
+<h1 data-id="heroTitle">
+Website Profesional
+<span>untuk Bisnis yang Ingin Tumbuh.</span>
+</h1>
 
-        <div class="hero-card">
-            <div class="card-top">
-                <span>HABIBI.ID</span>
-                <span>2026</span>
-            </div>
+<p class="hero-text" data-id="heroText">
+Bangun identitas digital yang modern, cepat, responsive,
+dan profesional untuk membuat bisnis kamu terlihat lebih terpercaya.
+</p>
 
-            <div class="card-center">
-                <small>DIGITAL EXPERIENCE</small>
-                <h2>Build.<br>Grow.</h2>
-                <p>Professional website for modern business.</p>
-            </div>
+<div class="actions">
 
-            <div class="card-bottom">
-                <div class="mini"><strong>100%</strong>Responsive</div>
-                <div class="mini"><strong>2026</strong>Modern UI</div>
-                <div class="mini"><strong>Fast</strong>Performance</div>
-            </div>
-        </div>
+<a
+href="#contact"
+class="btn btn-primary"
+data-id="heroButton1">
+Konsultasi Gratis ↗
+</a>
 
-    </div>
+<a
+href="#projects"
+class="btn btn-secondary"
+data-id="heroButton2">
+Lihat Portfolio ↓
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<div class="card-top">
+<span>HABIBI.ID</span>
+<span>2026</span>
+</div>
+
+<div class="card-center">
+
+<small data-id="cardLabel">
+DIGITAL EXPERIENCE
+</small>
+
+<h2>
+Build.<br>
+Grow.
+</h2>
+
+<p data-id="cardText">
+Professional website for modern business.
+</p>
+
+</div>
+
+<div class="card-bottom">
+
+<div class="mini">
+<strong>100%</strong>
+<span data-id="responsive">Responsive</span>
+</div>
+
+<div class="mini">
+<strong>2026</strong>
+<span data-id="modernUI">Modern UI</span>
+</div>
+
+<div class="mini">
+<strong>Fast</strong>
+<span data-id="performance">Performance</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
+
+<!-- ABOUT -->
 
 <section id="about">
-    <div class="container">
 
-        <div class="section-head">
-            <div class="section-number">01 / ABOUT</div>
-            <h2 class="section-title">Bukan sekadar website.<br>Kami membangun pengalaman digital.</h2>
-            <p class="section-desc">
-                HABIBI.ID membantu bisnis, personal brand, toko, dan organisasi
-                membangun website yang terlihat profesional dan mudah digunakan.
-            </p>
-        </div>
+<div class="container">
 
-        <div class="about-grid">
-            <div class="about-text">
-                <h3>Digital First.</h3>
-                <p>
-                    Website menjadi wajah pertama bisnis kamu di internet.
-                    Karena itu setiap detail dirancang untuk menarik perhatian,
-                    membangun kepercayaan, dan mendorong customer menghubungi kamu.
-                </p>
-            </div>
+<div class="section-head">
 
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-number">01</div>
-                    <h3>Modern</h3>
-                    <p>Tampilan mengikuti standar desain modern.</p>
-                </div>
+<div class="section-number">
+01 / ABOUT
+</div>
 
-                <div class="feature">
-                    <div class="feature-number">02</div>
-                    <h3>Responsive</h3>
-                    <p>Nyaman digunakan di desktop maupun smartphone.</p>
-                </div>
+<h2 class="section-title" data-id="aboutTitle">
+Bukan sekadar website.<br>
+Kami membangun pengalaman digital.
+</h2>
 
-                <div class="feature">
-                    <div class="feature-number">03</div>
-                    <h3>Custom</h3>
-                    <p>Dibangun menyesuaikan kebutuhan bisnis.</p>
-                </div>
-            </div>
-        </div>
+<p class="section-desc" data-id="aboutDesc">
+HABIBI.ID membantu bisnis, personal brand, toko,
+dan organisasi membangun website yang terlihat profesional
+dan mudah digunakan.
+</p>
 
-    </div>
+</div>
+
+<div class="about-grid">
+
+<div class="about-text">
+
+<h3 data-id="aboutSub">
+Digital First.
+</h3>
+
+<p data-id="aboutText">
+Website menjadi wajah pertama bisnis kamu di internet.
+Karena itu setiap detail dirancang untuk menarik perhatian,
+membangun kepercayaan, dan mendorong customer menghubungi kamu.
+</p>
+
+</div>
+
+<div class="features">
+
+<div class="feature">
+
+<div class="feature-number">
+01
+</div>
+
+<h3 data-id="feature1Title">
+Modern
+</h3>
+
+<p data-id="feature1Text">
+Tampilan mengikuti standar desain modern.
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="feature-number">
+02
+</div>
+
+<h3 data-id="feature2Title">
+Responsive
+</h3>
+
+<p data-id="feature2Text">
+Nyaman digunakan di desktop maupun smartphone.
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="feature-number">
+03
+</div>
+
+<h3 data-id="feature3Title">
+Custom
+</h3>
+
+<p data-id="feature3Text">
+Dibangun menyesuaikan kebutuhan bisnis.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
+
+<!-- SERVICES -->
 
 <section id="services">
-    <div class="container">
 
-        <div class="section-head">
-            <div class="section-number">02 / SERVICES</div>
-            <h2 class="section-title">Solusi digital<br>untuk kebutuhanmu.</h2>
-            <p class="section-desc">
-                Pilih layanan yang sesuai dengan kebutuhan bisnis dan project kamu.
-            </p>
-        </div>
+<div class="container">
 
-        <div class="services">
+<div class="section-head">
 
-            <div class="service">
-                <div class="service-number">01</div>
-                <div class="service-icon">▣</div>
-                <h3>Company Profile</h3>
-                <p>Website profesional untuk perusahaan, brand dan layanan bisnis.</p>
-                <a href="#contact">Start Project →</a>
-            </div>
+<div class="section-number">
+02 / SERVICES
+</div>
 
-            <div class="service">
-                <div class="service-number">02</div>
-                <div class="service-icon">◈</div>
-                <h3>Landing Page</h3>
-                <p>Landing page modern untuk promosi, produk dan personal brand.</p>
-                <a href="#contact">Start Project →</a>
-            </div>
+<h2 class="section-title" data-id="servicesTitle">
+Solusi digital<br>
+untuk kebutuhanmu.
+</h2>
 
-            <div class="service">
-                <div class="service-number">03</div>
-                <div class="service-icon">⌘</div>
-                <h3>Sistem Informasi</h3>
-                <p>Sistem berbasis web untuk pengelolaan data dan operasional.</p>
-                <a href="#contact">Start Project →</a>
-            </div>
+<p class="section-desc" data-id="servicesDesc">
+Pilih layanan yang sesuai dengan kebutuhan bisnis dan project kamu.
+</p>
 
-            <div class="service">
-                <div class="service-number">04</div>
-                <div class="service-icon">▤</div>
-                <h3>POS & Management</h3>
-                <p>Sistem kasir dan manajemen untuk membantu proses transaksi.</p>
-                <a href="#contact">Start Project →</a>
-            </div>
+</div>
 
-            <div class="service">
-                <div class="service-number">05</div>
-                <div class="service-icon">✣</div>
-                <h3>UI/UX Website</h3>
-                <p>Rancangan interface modern dengan pengalaman pengguna nyaman.</p>
-                <a href="#contact">Start Project →</a>
-            </div>
+<div class="services">
 
-            <div class="service">
-                <div class="service-number">06</div>
-                <div class="service-icon">↻</div>
-                <h3>Maintenance</h3>
-                <p>Update, perbaikan dan pengembangan website setelah project.</p>
-                <a href="#contact">Start Project →</a>
-            </div>
+<div class="service">
 
-        </div>
-    </div>
+<div class="service-number">
+01
+</div>
+
+<div class="service-icon">
+▣
+</div>
+
+<h3 data-id="service1Title">
+Company Profile
+</h3>
+
+<p data-id="service1Text">
+Website profesional untuk perusahaan, brand dan layanan bisnis.
+</p>
+
+<a href="#contact" data-id="startProject">
+Start Project →
+</a>
+
+</div>
+
+<div class="service">
+
+<div class="service-number">
+02
+</div>
+
+<div class="service-icon">
+◈
+</div>
+
+<h3 data-id="service2Title">
+Landing Page
+</h3>
+
+<p data-id="service2Text">
+Landing page modern untuk promosi, produk dan personal brand.
+</p>
+
+<a href="#contact" data-id="startProject">
+Start Project →
+</a>
+
+</div>
+
+<div class="service">
+
+<div class="service-number">
+03
+</div>
+
+<div class="service-icon">
+⌘
+</div>
+
+<h3 data-id="service3Title">
+Sistem Informasi
+</h3>
+
+<p data-id="service3Text">
+Sistem berbasis web untuk pengelolaan data dan operasional.
+</p>
+
+<a href="#contact" data-id="startProject">
+Start Project →
+</a>
+
+</div>
+
+<div class="service">
+
+<div class="service-number">
+04
+</div>
+
+<div class="service-icon">
+▤
+</div>
+
+<h3 data-id="service4Title">
+POS & Management
+</h3>
+
+<p data-id="service4Text">
+Sistem kasir dan manajemen untuk membantu proses transaksi.
+</p>
+
+<a href="#contact" data-id="startProject">
+Start Project →
+</a>
+
+</div>
+
+<div class="service">
+
+<div class="service-number">
+05
+</div>
+
+<div class="service-icon">
+✣
+</div>
+
+<h3 data-id="service5Title">
+UI/UX Website
+</h3>
+
+<p data-id="service5Text">
+Rancangan interface modern dengan pengalaman pengguna nyaman.
+</p>
+
+<a href="#contact" data-id="startProject">
+Start Project →
+</a>
+
+</div>
+
+<div class="service">
+
+<div class="service-number">
+06
+</div>
+
+<div class="service-icon">
+↻
+</div>
+
+<h3 data-id="service6Title">
+Maintenance
+</h3>
+
+<p data-id="service6Text">
+Update, perbaikan dan pengembangan website setelah project.
+</p>
+
+<a href="#contact" data-id="startProject">
+Start Project →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
+
+<!-- PROJECTS -->
 
 <section id="projects">
-    <div class="container">
 
-        <div class="section-head">
-            <div class="section-number">03 / PROJECTS</div>
-            <h2 class="section-title">Beberapa project<br>yang pernah dibuat.</h2>
-            <p class="section-desc">
-                Lihat contoh website dan sistem sebagai referensi project kamu.
-            </p>
-        </div>
+<div class="container">
 
-        <div class="projects">
+<div class="section-head">
 
-            <article class="project">
-                <div>
-                    <div class="project-tag">WEBSITE • COMPANY PROFILE</div>
-                    <h3>Website Kulkas AAN</h3>
-                    <p>Website bisnis elektronik dan service.</p>
-                </div>
-                <a href="https://website-kulkas-aan.vercel.app/" target="_blank" rel="noopener">
-                    Lihat Website AAN ↗
-                </a>
-            </article>
+<div class="section-number">
+03 / PROJECTS
+</div>
 
-            <article class="project">
-                <div>
-                    <div class="project-tag">SYSTEM • POS</div>
-                    <h3>POS Management</h3>
-                    <p>Konsep sistem kasir modern dengan dashboard management.</p>
-                </div>
-                <a href="#contact">Buat Sistem Serupa →</a>
-            </article>
+<h2 class="section-title" data-id="projectsTitle">
+Beberapa project<br>
+yang pernah dibuat.
+</h2>
 
-            <article class="project">
-                <div>
-                    <div class="project-tag">SYSTEM • EDUCATION</div>
-                    <h3>SIM Insan Madani</h3>
-                    <p>Sistem informasi manajemen sekolah berbasis web.</p>
-                </div>
-                <a href="#contact">Buat Sistem Serupa →</a>
-            </article>
+<p class="section-desc" data-id="projectsDesc">
+Lihat contoh website dan sistem sebagai referensi project kamu.
+</p>
 
-            <article class="project">
-                <div>
-                    <div class="project-tag">PERSONAL • PORTFOLIO</div>
-                    <h3>Portfolio Website</h3>
-                    <p>Portfolio personal untuk menampilkan karya dan pengalaman.</p>
-                </div>
-                <a href="#contact">Lihat Project →</a>
-            </article>
+</div>
 
-        </div>
-    </div>
+<div class="projects">
+
+<article class="project">
+
+<div>
+
+<div class="project-tag">
+WEBSITE • COMPANY PROFILE
+</div>
+
+<h3>
+Website Kulkas AAN
+</h3>
+
+<p data-id="project1Text">
+Website bisnis elektronik dan service.
+</p>
+
+</div>
+
+<a
+href="https://website-kulkas-aan.vercel.app/"
+target="_blank"
+rel="noopener">
+Lihat Website AAN ↗
+</a>
+
+</article>
+
+<article class="project">
+
+<div>
+
+<div class="project-tag">
+SYSTEM • POS
+</div>
+
+<h3>
+POS Management
+</h3>
+
+<p data-id="project2Text">
+Konsep sistem kasir modern dengan dashboard management.
+</p>
+
+</div>
+
+<a href="#contact" data-id="projectCTA">
+Buat Sistem Serupa →
+</a>
+
+</article>
+
+<article class="project">
+
+<div>
+
+<div class="project-tag">
+SYSTEM • EDUCATION
+</div>
+
+<h3>
+SIM Insan Madani
+</h3>
+
+<p data-id="project3Text">
+Sistem informasi manajemen sekolah berbasis web.
+</p>
+
+</div>
+
+<a href="#contact" data-id="projectCTA">
+Buat Sistem Serupa →
+</a>
+
+</article>
+
+<article class="project">
+
+<div>
+
+<div class="project-tag">
+PERSONAL • PORTFOLIO
+</div>
+
+<h3>
+Portfolio Website
+</h3>
+
+<p data-id="project4Text">
+Portfolio personal untuk menampilkan karya dan pengalaman.
+</p>
+
+</div>
+
+<a href="#contact" data-id="projectCTA">
+Buat Portfolio →
+</a>
+
+</article>
+
+</div>
+
+</div>
+
 </section>
+
+<!-- PROCESS -->
+
+<section>
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-number">
+04 / PROCESS
+</div>
+
+<h2 class="section-title" data-id="processTitle">
+Dari konsep<br>
+menjadi website.
+</h2>
+
+<p class="section-desc" data-id="processDesc">
+Proses sederhana untuk membuat project digital kamu.
+</p>
+
+</div>
+
+<div class="process">
+
+<div class="process-item">
+
+<div class="process-number">
+01
+</div>
+
+<h3 data-id="process1Title">
+Discovery
+</h3>
+
+<p data-id="process1Text">
+Memahami kebutuhan, tujuan dan target pengguna.
+</p>
+
+</div>
+
+<div class="process-item">
+
+<div class="process-number">
+02
+</div>
+
+<h3 data-id="process2Title">
+Design
+</h3>
+
+<p data-id="process2Text">
+Membuat struktur dan tampilan visual website.
+</p>
+
+</div>
+
+<div class="process-item">
+
+<div class="process-number">
+03
+</div>
+
+<h3 data-id="process3Title">
+Development
+</h3>
+
+<p data-id="process3Text">
+Mengembangkan website yang cepat dan responsive.
+</p>
+
+</div>
+
+<div class="process-item">
+
+<div class="process-number">
+04
+</div>
+
+<h3 data-id="process4Title">
+Launch
+</h3>
+
+<p data-id="process4Text">
+Website siap dipublikasikan dan digunakan.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TESTIMONIAL -->
 
 <section id="testimonials">
-    <div class="container">
 
-        <div class="section-head">
-            <div class="section-number">04 / TESTIMONIALS</div>
-            <h2 class="section-title">Fokus pada hasil<br>dan pengalaman.</h2>
-        </div>
+<div class="container">
 
-        <div class="testimonials">
-            <div class="quote">
-                “Website terlihat lebih profesional dan mudah digunakan.”
-                <strong>Customer A</strong>
-            </div>
+<div class="section-head">
 
-            <div class="quote">
-                “Proses pengerjaan dimulai dari kebutuhan sampai website siap digunakan.”
-                <strong>Customer B</strong>
-            </div>
+<div class="section-number">
+05 / TESTIMONIALS
+</div>
 
-            <div class="quote">
-                “Tampilan modern dan responsive untuk bisnis.”
-                <strong>Customer C</strong>
-            </div>
-        </div>
+<h2 class="section-title" data-id="testimonialTitle">
+Fokus pada hasil<br>
+dan pengalaman.
+</h2>
 
-    </div>
+</div>
+
+<div class="testimonials">
+
+<div class="quote">
+
+<span data-id="quote1">
+“Website terlihat lebih profesional dan mudah digunakan.”
+</span>
+
+<strong>
+Customer A
+</strong>
+
+</div>
+
+<div class="quote">
+
+<span data-id="quote2">
+“Proses pengerjaan dimulai dari kebutuhan sampai website siap digunakan.”
+</span>
+
+<strong>
+Customer B
+</strong>
+
+</div>
+
+<div class="quote">
+
+<span data-id="quote3">
+“Tampilan modern dan responsive untuk bisnis.”
+</span>
+
+<strong>
+Customer C
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
+<!-- CONTACT -->
+
 <section id="contact" class="contact">
-    <div class="container">
 
-        <div class="section-head">
-            <div class="section-number">05 / CONTACT</div>
-            <h2 class="section-title">Punya project<br>yang ingin dibangun?</h2>
-            <p class="section-desc">
-                Ceritakan kebutuhan website kamu. Kita bahas konsep,
-                fitur dan estimasinya.
-            </p>
-        </div>
+<div class="container">
 
-        <div class="contact-box">
-            <h3>Let's Build Something.</h3>
-            <p>Mulai konsultasi untuk project website kamu.</p>
+<div class="section-head">
 
-            <a
-                class="btn btn-primary"
-                href="https://wa.me/6281934704296?text=Halo%20HABIBI.ID,%20saya%20ingin%20konsultasi%20project%20website."
-                target="_blank"
-                rel="noopener">
-                Chat WhatsApp ↗
-            </a>
-        </div>
+<div class="section-number">
+06 / CONTACT
+</div>
 
-    </div>
+<h2 class="section-title" data-id="contactTitle">
+Punya project<br>
+yang ingin dibangun?
+</h2>
+
+<p class="section-desc" data-id="contactDesc">
+Ceritakan kebutuhan website kamu. Kita bahas konsep,
+fitur dan estimasinya.
+</p>
+
+</div>
+
+<div class="contact-box">
+
+<h3 data-id="contactBoxTitle">
+Let's Build Something.
+</h3>
+
+<p data-id="contactBoxText">
+Mulai konsultasi untuk project website kamu.
+</p>
+
+<a
+class="btn btn-primary"
+href="https://wa.me/6281934704296?text=Halo%20HABIBI.ID,%20saya%20ingin%20konsultasi%20project%20website."
+target="_blank"
+rel="noopener"
+data-id="whatsappButton">
+Chat WhatsApp ↗
+</a>
+
+</div>
+
+</div>
+
 </section>
 
 </main>
 
 <footer>
-    <div class="container footer-content">
-        <div>
-            <strong>HABIBI.ID</strong><br>
-            Digital solution untuk bisnis, brand dan personal project.
-        </div>
 
-        <div>
-            © 2026 HABIBI.ID
-        </div>
-    </div>
+<div class="container footer-content">
+
+<div>
+
+<strong>HABIBI.ID</strong><br>
+
+<span data-id="footerText">
+Digital solution untuk bisnis, brand dan personal project.
+</span>
+
+</div>
+
+<div>
+© 2026 HABIBI.ID
+</div>
+
+</div>
+
 </footer>
+
+<script>
+
+/* =========================
+   LANGUAGE SYSTEM
+========================= */
+
+const translations = {
+
+id: {
+
+navHome:"Beranda",
+navAbout:"Tentang",
+navServices:"Layanan",
+navProjects:"Portfolio",
+navTestimonials:"Testimoni",
+navContact:"Kontak",
+navStart:"Mulai Project",
+
+heroLabel:"DIGITAL SOLUTION • 2026",
+
+heroTitle:"Website Profesional|untuk Bisnis yang Ingin Tumbuh.",
+
+heroText:
+"Bangun identitas digital yang modern, cepat, responsive, dan profesional untuk membuat bisnis kamu terlihat lebih terpercaya.",
+
+heroButton1:"Konsultasi Gratis ↗",
+heroButton2:"Lihat Portfolio ↓",
+
+cardLabel:"DIGITAL EXPERIENCE",
+cardText:"Professional website for modern business.",
+
+responsive:"Responsive",
+modernUI:"Modern UI",
+performance:"Performance",
+
+aboutTitle:"Bukan sekadar website.|Kami membangun pengalaman digital.",
+
+aboutDesc:
+"HABIBI.ID membantu bisnis, personal brand, toko, dan organisasi membangun website yang terlihat profesional dan mudah digunakan.",
+
+aboutSub:"Digital First.",
+
+aboutText:
+"Website menjadi wajah pertama bisnis kamu di internet. Karena itu setiap detail dirancang untuk menarik perhatian, membangun kepercayaan, dan mendorong customer menghubungi kamu.",
+
+feature1Title:"Modern",
+feature1Text:"Tampilan mengikuti standar desain modern.",
+
+feature2Title:"Responsive",
+feature2Text:"Nyaman digunakan di desktop maupun smartphone.",
+
+feature3Title:"Custom",
+feature3Text:"Dibangun menyesuaikan kebutuhan bisnis.",
+
+servicesTitle:"Solusi digital|untuk kebutuhanmu.",
+
+servicesDesc:
+"Pilih layanan yang sesuai dengan kebutuhan bisnis dan project kamu.",
+
+service1Title:"Company Profile",
+service1Text:
+"Website profesional untuk perusahaan, brand dan layanan bisnis.",
+
+service2Title:"Landing Page",
+service2Text:
+"Landing page modern untuk promosi, produk dan personal brand.",
+
+service3Title:"Sistem Informasi",
+service3Text:
+"Sistem berbasis web untuk pengelolaan data dan operasional.",
+
+service4Title:"POS & Management",
+service4Text:
+"Sistem kasir dan manajemen untuk membantu proses transaksi.",
+
+service5Title:"UI/UX Website",
+service5Text:
+"Rancangan interface modern dengan pengalaman pengguna nyaman.",
+
+service6Title:"Maintenance",
+service6Text:
+"Update, perbaikan dan pengembangan website setelah project.",
+
+startProject:"Start Project →",
+
+projectsTitle:"Beberapa project|yang pernah dibuat.",
+
+projectsDesc:
+"Lihat contoh website dan sistem sebagai referensi project kamu.",
+
+project1Text:
+"Website bisnis elektronik dan service.",
+
+project2Text:
+"Konsep sistem kasir modern dengan dashboard management.",
+
+project3Text:
+"Sistem informasi manajemen sekolah berbasis web.",
+
+project4Text:
+"Portfolio personal untuk menampilkan karya dan pengalaman.",
+
+projectCTA:"Buat Sistem Serupa →",
+
+processTitle:"Dari konsep|menjadi website.",
+
+processDesc:
+"Proses sederhana untuk membuat project digital kamu.",
+
+process1Title:"Discovery",
+process1Text:
+"Memahami kebutuhan, tujuan dan target pengguna.",
+
+process2Title:"Design",
+process2Text:
+"Membuat struktur dan tampilan visual website.",
+
+process3Title:"Development",
+process3Text:
+"Mengembangkan website yang cepat dan responsive.",
+
+process4Title:"Launch",
+process4Text:
+"Website siap dipublikasikan dan digunakan.",
+
+testimonialTitle:"Fokus pada hasil|dan pengalaman.",
+
+quote1:
+"“Website terlihat lebih profesional dan mudah digunakan.”",
+
+quote2:
+"“Proses pengerjaan dimulai dari kebutuhan sampai website siap digunakan.”",
+
+quote3:
+"“Tampilan modern dan responsive untuk bisnis.”",
+
+contactTitle:"Punya project|yang ingin dibangun.",
+
+contactDesc:
+"Ceritakan kebutuhan website kamu. Kita bahas konsep, fitur dan estimasinya.",
+
+contactBoxTitle:"Let's Build Something.",
+
+contactBoxText:
+"Mulai konsultasi untuk project website kamu.",
+
+whatsappButton:"Chat WhatsApp ↗",
+
+footerText:
+"Digital solution untuk bisnis, brand dan personal project."
+
+},
+
+en: {
+
+navHome:"Home",
+navAbout:"About",
+navServices:"Services",
+navProjects:"Portfolio",
+navTestimonials:"Testimonials",
+navContact:"Contact",
+navStart:"Start Project",
+
+heroLabel:"DIGITAL SOLUTION • 2026",
+
+heroTitle:"Professional Websites|for Businesses That Want to Grow.",
+
+heroText:
+"Build a modern, fast, responsive and professional digital identity that makes your business more trusted.",
+
+heroButton1:"Free Consultation ↗",
+heroButton2:"View Portfolio ↓",
+
+cardLabel:"DIGITAL EXPERIENCE",
+cardText:"Professional website for modern business.",
+
+responsive:"Responsive",
+modernUI:"Modern UI",
+performance:"Performance",
+
+aboutTitle:"More than a website.|We build digital experiences.",
+
+aboutDesc:
+"HABIBI.ID helps businesses, personal brands, stores and organizations build professional and easy-to-use websites.",
+
+aboutSub:"Digital First.",
+
+aboutText:
+"Your website is the first face of your business on the internet. Every detail is designed to attract attention, build trust and encourage customers to contact you.",
+
+feature1Title:"Modern",
+feature1Text:"A modern interface designed for today's digital standards.",
+
+feature2Title:"Responsive",
+feature2Text:"Comfortable to use on desktop, tablet and smartphone.",
+
+feature3Title:"Custom",
+feature3Text:"Built according to your business needs.",
+
+servicesTitle:"Digital solutions|for your needs.",
+
+servicesDesc:
+"Choose the service that fits your business and project requirements.",
+
+service1Title:"Company Profile",
+service1Text:
+"Professional websites for companies, brands and business services.",
+
+service2Title:"Landing Page",
+service2Text:
+"Modern landing pages for promotions, products and personal brands.",
+
+service3Title:"Information System",
+service3Text:
+"Web-based systems for data and operational management.",
+
+service4Title:"POS & Management",
+service4Text:
+"Point-of-sale and management systems for business transactions.",
+
+service5Title:"UI/UX Website",
+service5Text:
+"Modern interfaces designed with a comfortable user experience.",
+
+service6Title:"Maintenance",
+service6Text:
+"Website updates, improvements and ongoing development.",
+
+startProject:"Start Project →",
+
+projectsTitle:"Selected|digital projects.",
+
+projectsDesc:
+"Explore examples of websites and systems as project references.",
+
+project1Text:
+"Electronics and service business website.",
+
+project2Text:
+"Modern point-of-sale system concept with management dashboard.",
+
+project3Text:
+"Web-based school information management system.",
+
+project4Text:
+"Personal portfolio website for showcasing work and experience.",
+
+projectCTA:"Build a Similar System →",
+
+processTitle:"From concept|to website.",
+
+processDesc:
+"A simple process to turn your digital idea into reality.",
+
+process1Title:"Discovery",
+process1Text:
+"Understanding your needs, goals and target users.",
+
+process2Title:"Design",
+process2Text:
+"Creating the website structure and visual direction.",
+
+process3Title:"Development",
+process3Text:
+"Building a fast and responsive website.",
+
+process4Title:"Launch",
+process4Text:
+"Your website is ready to publish and use.",
+
+testimonialTitle:"Focused on results|and experience.",
+
+quote1:
+"“The website looks more professional and easy to use.”",
+
+quote2:
+"“The process started from our needs until the website was ready.”",
+
+quote3:
+"“A modern and responsive design for business.”",
+
+contactTitle:"Have a project|you want to build?",
+
+contactDesc:
+"Tell us about your website needs. We can discuss the concept, features and estimated scope.",
+
+contactBoxTitle:"Let's Build Something.",
+
+contactBoxText:
+"Start a consultation for your website project.",
+
+whatsappButton:"Chat on WhatsApp ↗",
+
+footerText:
+"Digital solutions for businesses, brands and personal projects."
+
+}
+
+};
+
+let currentLanguage =
+localStorage.getItem("habibiLanguage") || "id";
+
+function setLanguage(language){
+
+currentLanguage = language;
+
+localStorage.setItem(
+"habibiLanguage",
+language
+);
+
+const data = translations[language];
+
+document.documentElement.lang = language;
+
+document
+.querySelectorAll("[data-id]")
+.forEach(element => {
+
+const key = element.dataset.id;
+
+if(data[key]){
+
+if(
+key === "heroTitle" ||
+key === "aboutTitle" ||
+key === "servicesTitle" ||
+key === "projectsTitle" ||
+key === "processTitle" ||
+key === "testimonialTitle" ||
+key === "contactTitle"
+){
+
+element.innerHTML =
+data[key].replace("|","<span>");
+
+if(element.querySelector("span")){
+
+const span =
+element.querySelector("span");
+
+span.innerHTML =
+data[key].split("|")[1];
+
+}
+
+}else{
+
+element.textContent =
+data[key];
+
+}
+
+}
+
+});
+
+document.getElementById(
+"languageButton"
+).textContent =
+language === "id"
+? "ID / EN"
+: "EN / ID";
+
+}
+
+document
+.getElementById("languageButton")
+.addEventListener(
+"click",
+function(){
+
+setLanguage(
+currentLanguage === "id"
+? "en"
+: "id"
+);
+
+}
+);
+
+
+/* =========================
+   THEME SYSTEM
+========================= */
+
+const savedTheme =
+localStorage.getItem("habibiTheme") || "dark";
+
+function setTheme(theme){
+
+if(theme === "light"){
+
+document.body.classList.add("light");
+
+document.getElementById(
+"themeButton"
+).textContent = "☀";
+
+}else{
+
+document.body.classList.remove("light");
+
+document.getElementById(
+"themeButton"
+).textContent = "☾";
+
+}
+
+localStorage.setItem(
+"habibiTheme",
+theme
+);
+
+}
+
+setTheme(savedTheme);
+
+document
+.getElementById("themeButton")
+.addEventListener(
+"click",
+function(){
+
+const newTheme =
+document.body.classList.contains("light")
+? "dark"
+: "light";
+
+setTheme(newTheme);
+
+}
+);
+
+
+/* =========================
+   START LANGUAGE
+========================= */
+
+setLanguage(currentLanguage);
+
+</script>
 
 </body>
 </html>

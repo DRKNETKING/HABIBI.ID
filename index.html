@@ -3,178 +3,272 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HABIBI.ID - Digital Solution untuk bisnis, brand, toko dan personal project.">
 <title>HABIBI.ID — Digital Solution</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial,Helvetica,sans-serif;
     background:#050505;
     color:#fff;
     line-height:1.6;
+    overflow-x:hidden;
 }
-a{text-decoration:none;color:inherit}
-.container{width:min(1150px,92%);margin:auto}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
 
 header{
     position:fixed;
     top:0;
     left:0;
-    width:100%;
+    right:0;
     z-index:1000;
     background:rgba(5,5,5,.88);
-    backdrop-filter:blur(15px);
     border-bottom:1px solid #222;
+    backdrop-filter:blur(14px);
 }
-nav{
-    min-height:75px;
+
+.navbar{
+    min-height:76px;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    gap:30px;
 }
-.logo{
-    font-size:23px;
-    font-weight:800;
-}
-.logo span{color:#777}
 
-.nav-links{
+.logo{
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#888;
+}
+
+.nav{
     display:flex;
+    align-items:center;
     gap:25px;
-    list-style:none;
     font-size:14px;
 }
-.nav-links a{color:#aaa}
-.nav-links a:hover{color:#fff}
+
+.nav a{
+    color:#aaa;
+    transition:.25s;
+}
+
+.nav a:hover{
+    color:#fff;
+}
 
 .nav-button{
-    background:#fff;
-    color:#000;
     padding:11px 18px;
-    border-radius:8px;
-    font-size:13px;
-    font-weight:bold;
+    border:1px solid #444;
+    border-radius:30px;
+    color:#fff !important;
 }
 
 .hero{
     min-height:100vh;
     display:flex;
     align-items:center;
-    padding:120px 0 70px;
+    padding:130px 0 80px;
     background:
-    radial-gradient(circle at 80% 20%,#222,transparent 35%),
-    radial-gradient(circle at 20% 80%,#151515,transparent 30%),
-    #050505;
+        radial-gradient(circle at 80% 20%,rgba(255,255,255,.09),transparent 30%),
+        radial-gradient(circle at 15% 70%,rgba(255,255,255,.05),transparent 30%),
+        #050505;
 }
 
 .hero-grid{
     display:grid;
     grid-template-columns:1.15fr .85fr;
-    gap:60px;
+    gap:70px;
     align-items:center;
 }
 
-.eyebrow{
-    color:#aaa;
-    font-size:13px;
+.label{
+    color:#999;
+    font-size:12px;
     letter-spacing:3px;
-    margin-bottom:20px;
+    margin-bottom:22px;
+    text-transform:uppercase;
 }
 
-h1{
-    font-size:clamp(48px,7vw,90px);
+.hero h1{
+    font-size:clamp(48px,7vw,92px);
     line-height:.95;
     letter-spacing:-5px;
-    margin-bottom:30px;
+    max-width:850px;
+    margin-bottom:28px;
 }
-h1 span{display:block;color:#777}
+
+.hero h1 span{
+    color:#777;
+}
 
 .hero-text{
-    max-width:620px;
     color:#aaa;
-    font-size:17px;
-    margin-bottom:30px;
+    font-size:18px;
+    max-width:650px;
+    margin-bottom:35px;
 }
 
-.buttons{
+.actions{
     display:flex;
-    gap:12px;
+    gap:14px;
     flex-wrap:wrap;
 }
 
 .btn{
-    display:inline-block;
-    padding:14px 22px;
-    border:1px solid #333;
-    border-radius:8px;
-    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 23px;
+    border-radius:5px;
+    border:1px solid #444;
+    transition:.25s;
 }
+
 .btn-primary{
     background:#fff;
     color:#000;
+    border-color:#fff;
 }
-.btn:hover{border-color:#777}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+.btn-secondary:hover{
+    background:#151515;
+}
 
 .hero-card{
     border:1px solid #292929;
-    border-radius:20px;
-    padding:35px;
     background:linear-gradient(145deg,#151515,#080808);
-    box-shadow:0 30px 80px rgba(0,0,0,.45);
+    min-height:470px;
+    padding:30px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-card:before{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    border:1px solid #333;
+    border-radius:50%;
+    right:-100px;
+    top:-80px;
 }
 
 .card-top{
+    display:flex;
+    justify-content:space-between;
     color:#777;
     font-size:12px;
-    letter-spacing:3px;
-    margin-bottom:45px;
-}
-.card-title{
-    font-size:42px;
-    font-weight:800;
-}
-.card-subtitle{
-    color:#888;
-    margin:10px 0 35px;
+    letter-spacing:2px;
 }
 
-.stats{
+.card-center{
+    position:absolute;
+    left:30px;
+    right:30px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.card-center small{
+    color:#777;
+    letter-spacing:3px;
+}
+
+.card-center h2{
+    font-size:56px;
+    line-height:1;
+    margin:14px 0;
+    letter-spacing:-3px;
+}
+
+.card-center p{
+    color:#888;
+}
+
+.card-bottom{
+    position:absolute;
+    left:30px;
+    right:30px;
+    bottom:30px;
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:10px;
 }
-.stat{
+
+.mini{
     border-top:1px solid #333;
-    padding-top:15px;
+    padding-top:10px;
+    color:#888;
+    font-size:12px;
 }
-.stat strong{
+
+.mini strong{
     display:block;
-    font-size:22px;
+    color:#fff;
+    font-size:18px;
 }
-.stat small{color:#777}
 
 section{
-    padding:110px 0;
-    border-top:1px solid #161616;
+    padding:120px 0;
+    border-top:1px solid #181818;
 }
 
-.section-label{
+.section-head{
+    max-width:760px;
+    margin-bottom:60px;
+}
+
+.section-number{
     color:#666;
     font-size:12px;
     letter-spacing:3px;
     margin-bottom:15px;
 }
+
 .section-title{
-    font-size:clamp(36px,5vw,62px);
+    font-size:clamp(38px,5vw,65px);
     line-height:1;
     letter-spacing:-3px;
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
+
 .section-desc{
     color:#888;
-    max-width:680px;
-    margin-bottom:45px;
+    font-size:17px;
+    max-width:650px;
 }
 
 .about-grid{
@@ -182,167 +276,283 @@ section{
     grid-template-columns:1fr 1fr;
     gap:70px;
 }
+
 .about-text{
-    color:#aaa;
+    color:#999;
     font-size:18px;
+}
+
+.about-text h3{
+    color:#fff;
+    font-size:28px;
+    margin-bottom:18px;
 }
 
 .features{
     display:grid;
-    gap:18px;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
 }
+
 .feature{
-    border:1px solid #242424;
-    border-radius:12px;
-    padding:22px;
-    background:#0b0b0b;
+    border:1px solid #262626;
+    padding:28px;
+    min-height:190px;
 }
+
 .feature-number{
     color:#555;
-    font-size:12px;
-    margin-bottom:10px;
+    font-size:13px;
+    margin-bottom:45px;
 }
+
+.feature h3{
+    margin-bottom:8px;
+}
+
 .feature p{
     color:#777;
     font-size:14px;
 }
 
-.services-grid{
+.services{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:15px;
+    border-top:1px solid #252525;
+    border-left:1px solid #252525;
 }
+
 .service{
-    border:1px solid #242424;
-    padding:30px;
-    min-height:230px;
-    border-radius:14px;
-    background:#090909;
+    padding:32px;
+    min-height:270px;
+    border-right:1px solid #252525;
+    border-bottom:1px solid #252525;
+    transition:.25s;
 }
+
+.service:hover{
+    background:#101010;
+}
+
 .service-number{
     color:#555;
-    font-size:13px;
     margin-bottom:35px;
 }
-.service h3{
-    font-size:21px;
-    margin-bottom:10px;
+
+.service-icon{
+    font-size:25px;
+    margin-bottom:20px;
 }
+
+.service h3{
+    font-size:22px;
+    margin-bottom:12px;
+}
+
 .service p{
     color:#777;
     font-size:14px;
+    margin-bottom:22px;
 }
 
-.process{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-.process-item{
-    border-top:1px solid #333;
-    padding-top:20px;
-}
-.process-number{
-    color:#555;
-    margin-bottom:30px;
-}
-.process-item p{
-    color:#777;
-    font-size:14px;
+.service a{
+    color:#fff;
+    font-size:13px;
 }
 
 .projects{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:20px;
+    gap:18px;
 }
+
 .project{
-    min-height:280px;
-    padding:35px;
-    border:1px solid #292929;
-    border-radius:16px;
-    background:linear-gradient(145deg,#151515,#080808);
+    min-height:320px;
+    border:1px solid #282828;
+    padding:30px;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-}
-.project-type{
-    color:#666;
-    font-size:12px;
-    letter-spacing:2px;
-}
-.project h3{
-    font-size:30px;
-    margin:10px 0;
-}
-.project p{color:#777}
-.project-link{
-    margin-top:20px;
-    font-weight:bold;
+    background:linear-gradient(145deg,#111,#070707);
 }
 
-.faq{
-    max-width:850px;
+.project-tag{
+    color:#666;
+    font-size:11px;
+    letter-spacing:2px;
 }
-details{
-    border-bottom:1px solid #242424;
-    padding:22px 0;
+
+.project h3{
+    font-size:32px;
+    letter-spacing:-1px;
 }
-summary{
-    cursor:pointer;
-    font-weight:bold;
-}
-details p{
+
+.project p{
     color:#777;
-    padding-top:15px;
+    margin-top:8px;
+}
+
+.project a{
+    display:inline-block;
+    margin-top:25px;
+    color:#fff;
+}
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-top:1px solid #292929;
+}
+
+.process-item{
+    padding:30px 20px;
+    border-right:1px solid #292929;
+}
+
+.process-item:last-child{
+    border-right:0;
+}
+
+.process-number{
+    font-size:12px;
+    color:#666;
+    margin-bottom:45px;
+}
+
+.process-item h3{
+    margin-bottom:10px;
+}
+
+.process-item p{
+    color:#777;
+    font-size:14px;
+}
+
+.testimonials{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.quote{
+    border:1px solid #282828;
+    padding:30px;
+    color:#999;
+}
+
+.quote strong{
+    display:block;
+    color:#fff;
+    margin-top:25px;
+}
+
+.contact{
+    text-align:center;
+    padding-bottom:140px;
+}
+
+.contact .section-head{
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .contact-box{
-    padding:55px;
-    border-radius:20px;
-    border:1px solid #333;
-    background:linear-gradient(145deg,#151515,#080808);
-    text-align:center;
+    border:1px solid #292929;
+    padding:55px 25px;
+    background:linear-gradient(145deg,#111,#070707);
 }
-.contact-box h2{
-    font-size:clamp(38px,6vw,70px);
-    line-height:1;
-    letter-spacing:-3px;
-    margin-bottom:20px;
+
+.contact-box h3{
+    font-size:42px;
+    letter-spacing:-2px;
+    margin-bottom:15px;
 }
+
 .contact-box p{
-    color:#888;
-    max-width:600px;
-    margin:0 auto 30px;
+    color:#777;
+    margin-bottom:28px;
 }
 
 footer{
     border-top:1px solid #222;
     padding:35px 0;
     color:#666;
-    font-size:13px;
 }
+
 .footer-content{
     display:flex;
     justify-content:space-between;
     gap:20px;
 }
 
-@media(max-width:850px){
-    .nav-links{display:none}
-    .hero-grid,.about-grid{grid-template-columns:1fr}
-    .services-grid{grid-template-columns:1fr 1fr}
-    .process{grid-template-columns:1fr 1fr}
-    .projects{grid-template-columns:1fr}
+.footer-content strong{
+    color:#fff;
 }
 
-@media(max-width:550px){
-    .nav-button{display:none}
-    .hero{padding-top:100px}
-    section{padding:80px 0}
-    .services-grid,.process{grid-template-columns:1fr}
-    .stats{grid-template-columns:1fr;gap:20px}
-    .contact-box{padding:28px}
+@media(max-width:900px){
+    .nav{
+        display:none;
+    }
+
+    .hero-grid,
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-card{
+        min-height:400px;
+    }
+
+    .services{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .process{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .process-item{
+        border-bottom:1px solid #292929;
+    }
+}
+
+@media(max-width:600px){
+    .hero{
+        padding-top:110px;
+    }
+
+    .hero h1{
+        font-size:52px;
+        letter-spacing:-3px;
+    }
+
+    .hero-text{
+        font-size:16px;
+    }
+
+    section{
+        padding:85px 0;
+    }
+
+    .features,
+    .services,
+    .projects,
+    .process,
+    .testimonials{
+        grid-template-columns:1fr;
+    }
+
+    .process-item{
+        border-right:0;
+    }
+
+    .footer-content{
+        flex-direction:column;
+    }
+
+    .card-center h2{
+        font-size:42px;
+    }
 }
 </style>
 </head>
@@ -350,372 +560,302 @@ footer{
 <body>
 
 <header>
-<div class="container">
-<nav>
+    <div class="container navbar">
+        <a href="#home" class="logo">HABIBI<span>.ID</span></a>
 
-<a href="#home" class="logo">HABIBI<span>.ID</span></a>
-
-<ul class="nav-links">
-<li><a href="#home">Beranda</a></li>
-<li><a href="#about">Tentang</a></li>
-<li><a href="#services">Layanan</a></li>
-<li><a href="#projects">Portfolio</a></li>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="#contact">Kontak</a></li>
-</ul>
-
-<a href="#contact" class="nav-button">Mulai Project</a>
-
-</nav>
-</div>
+        <nav class="nav">
+            <a href="#home">Beranda</a>
+            <a href="#about">Tentang</a>
+            <a href="#services">Layanan</a>
+            <a href="#projects">Portfolio</a>
+            <a href="#testimonials">Testimoni</a>
+            <a href="#contact">Kontak</a>
+            <a href="#contact" class="nav-button">Mulai Project</a>
+        </nav>
+    </div>
 </header>
 
 <main>
 
 <section class="hero" id="home">
-<div class="container hero-grid">
+    <div class="container hero-grid">
 
-<div>
+        <div>
+            <div class="label">Digital Solution • 2026</div>
 
-<div class="eyebrow">DIGITAL SOLUTION • 2026</div>
+            <h1>
+                Website Profesional
+                <span>untuk Bisnis yang Ingin Tumbuh.</span>
+            </h1>
 
-<h1>
-Website Profesional
-<span>untuk Bisnis yang Ingin Tumbuh.</span>
-</h1>
+            <p class="hero-text">
+                Bangun identitas digital yang modern, cepat, responsive,
+                dan profesional untuk membuat bisnis kamu terlihat lebih terpercaya.
+            </p>
 
-<p class="hero-text">
-Bangun identitas digital yang modern, cepat, responsive,
-dan profesional untuk membuat bisnis kamu terlihat lebih terpercaya.
-</p>
+            <div class="actions">
+                <a href="#contact" class="btn btn-primary">Konsultasi Gratis ↗</a>
+                <a href="#projects" class="btn btn-secondary">Lihat Portfolio ↓</a>
+            </div>
+        </div>
 
-<div class="buttons">
-<a class="btn btn-primary" href="#contact">Konsultasi Gratis ↗</a>
-<a class="btn" href="#projects">Lihat Portfolio ↓</a>
-</div>
+        <div class="hero-card">
+            <div class="card-top">
+                <span>HABIBI.ID</span>
+                <span>2026</span>
+            </div>
 
-</div>
+            <div class="card-center">
+                <small>DIGITAL EXPERIENCE</small>
+                <h2>Build.<br>Grow.</h2>
+                <p>Professional website for modern business.</p>
+            </div>
 
-<div class="hero-card">
+            <div class="card-bottom">
+                <div class="mini"><strong>100%</strong>Responsive</div>
+                <div class="mini"><strong>2026</strong>Modern UI</div>
+                <div class="mini"><strong>Fast</strong>Performance</div>
+            </div>
+        </div>
 
-<div class="card-top">DIGITAL EXPERIENCE</div>
-
-<div class="card-title">Build.<br>Grow.</div>
-
-<div class="card-subtitle">
-Professional website for modern business.
-</div>
-
-<div class="stats">
-
-<div class="stat">
-<strong>100%</strong>
-<small>Responsive</small>
-</div>
-
-<div class="stat">
-<strong>2026</strong>
-<small>Modern UI</small>
-</div>
-
-<div class="stat">
-<strong>Fast</strong>
-<small>Performance</small>
-</div>
-
-</div>
-</div>
-
-</div>
+    </div>
 </section>
 
 <section id="about">
-<div class="container">
+    <div class="container">
 
-<div class="section-label">01 / ABOUT</div>
+        <div class="section-head">
+            <div class="section-number">01 / ABOUT</div>
+            <h2 class="section-title">Bukan sekadar website.<br>Kami membangun pengalaman digital.</h2>
+            <p class="section-desc">
+                HABIBI.ID membantu bisnis, personal brand, toko, dan organisasi
+                membangun website yang terlihat profesional dan mudah digunakan.
+            </p>
+        </div>
 
-<div class="about-grid">
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Digital First.</h3>
+                <p>
+                    Website menjadi wajah pertama bisnis kamu di internet.
+                    Karena itu setiap detail dirancang untuk menarik perhatian,
+                    membangun kepercayaan, dan mendorong customer menghubungi kamu.
+                </p>
+            </div>
 
-<div>
-<h2 class="section-title">
-Bukan sekadar website.
-Kami membangun pengalaman digital.
-</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-number">01</div>
+                    <h3>Modern</h3>
+                    <p>Tampilan mengikuti standar desain modern.</p>
+                </div>
 
-<p class="about-text">
-HABIBI.ID membantu bisnis, personal brand, toko,
-dan organisasi membangun website yang terlihat
-profesional dan mudah digunakan.
-</p>
-</div>
+                <div class="feature">
+                    <div class="feature-number">02</div>
+                    <h3>Responsive</h3>
+                    <p>Nyaman digunakan di desktop maupun smartphone.</p>
+                </div>
 
-<div class="features">
+                <div class="feature">
+                    <div class="feature-number">03</div>
+                    <h3>Custom</h3>
+                    <p>Dibangun menyesuaikan kebutuhan bisnis.</p>
+                </div>
+            </div>
+        </div>
 
-<div class="feature">
-<div class="feature-number">01</div>
-<h3>Modern</h3>
-<p>Tampilan mengikuti standar desain digital modern.</p>
-</div>
-
-<div class="feature">
-<div class="feature-number">02</div>
-<h3>Responsive</h3>
-<p>Nyaman digunakan di desktop, tablet maupun smartphone.</p>
-</div>
-
-<div class="feature">
-<div class="feature-number">03</div>
-<h3>Custom</h3>
-<p>Dibangun menyesuaikan kebutuhan dan karakter bisnis.</p>
-</div>
-
-</div>
-</div>
-</div>
+    </div>
 </section>
 
 <section id="services">
-<div class="container">
+    <div class="container">
 
-<div class="section-label">02 / SERVICES</div>
+        <div class="section-head">
+            <div class="section-number">02 / SERVICES</div>
+            <h2 class="section-title">Solusi digital<br>untuk kebutuhanmu.</h2>
+            <p class="section-desc">
+                Pilih layanan yang sesuai dengan kebutuhan bisnis dan project kamu.
+            </p>
+        </div>
 
-<h2 class="section-title">
-Solusi digital<br>untuk kebutuhanmu.
-</h2>
+        <div class="services">
 
-<p class="section-desc">
-Pilih layanan yang sesuai dengan kebutuhan bisnis dan project kamu.
-</p>
+            <div class="service">
+                <div class="service-number">01</div>
+                <div class="service-icon">▣</div>
+                <h3>Company Profile</h3>
+                <p>Website profesional untuk perusahaan, brand dan layanan bisnis.</p>
+                <a href="#contact">Start Project →</a>
+            </div>
 
-<div class="services-grid">
+            <div class="service">
+                <div class="service-number">02</div>
+                <div class="service-icon">◈</div>
+                <h3>Landing Page</h3>
+                <p>Landing page modern untuk promosi, produk dan personal brand.</p>
+                <a href="#contact">Start Project →</a>
+            </div>
 
-<div class="service">
-<div class="service-number">01</div>
-<h3>Company Profile</h3>
-<p>Website profesional untuk memperkenalkan perusahaan, brand, layanan dan informasi bisnis.</p>
-</div>
+            <div class="service">
+                <div class="service-number">03</div>
+                <div class="service-icon">⌘</div>
+                <h3>Sistem Informasi</h3>
+                <p>Sistem berbasis web untuk pengelolaan data dan operasional.</p>
+                <a href="#contact">Start Project →</a>
+            </div>
 
-<div class="service">
-<div class="service-number">02</div>
-<h3>Landing Page</h3>
-<p>Landing page modern untuk promosi, produk, campaign dan personal brand.</p>
-</div>
+            <div class="service">
+                <div class="service-number">04</div>
+                <div class="service-icon">▤</div>
+                <h3>POS & Management</h3>
+                <p>Sistem kasir dan manajemen untuk membantu proses transaksi.</p>
+                <a href="#contact">Start Project →</a>
+            </div>
 
-<div class="service">
-<div class="service-number">03</div>
-<h3>Sistem Informasi</h3>
-<p>Sistem berbasis web untuk membantu pengelolaan data dan operasional.</p>
-</div>
+            <div class="service">
+                <div class="service-number">05</div>
+                <div class="service-icon">✣</div>
+                <h3>UI/UX Website</h3>
+                <p>Rancangan interface modern dengan pengalaman pengguna nyaman.</p>
+                <a href="#contact">Start Project →</a>
+            </div>
 
-<div class="service">
-<div class="service-number">04</div>
-<h3>POS & Management</h3>
-<p>Sistem kasir dan manajemen untuk membantu proses transaksi bisnis.</p>
-</div>
+            <div class="service">
+                <div class="service-number">06</div>
+                <div class="service-icon">↻</div>
+                <h3>Maintenance</h3>
+                <p>Update, perbaikan dan pengembangan website setelah project.</p>
+                <a href="#contact">Start Project →</a>
+            </div>
 
-<div class="service">
-<div class="service-number">05</div>
-<h3>UI/UX Website</h3>
-<p>Rancangan interface modern dengan pengalaman pengguna yang nyaman.</p>
-</div>
-
-<div class="service">
-<div class="service-number">06</div>
-<h3>Maintenance</h3>
-<p>Bantuan update, perbaikan dan pengembangan website setelah project.</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<div class="section-label">03 / PROCESS</div>
-
-<h2 class="section-title">
-Dari ide menjadi<br>website siap digunakan.
-</h2>
-
-<div class="process">
-
-<div class="process-item">
-<div class="process-number">01</div>
-<h3>Konsultasi</h3>
-<p>Ceritakan kebutuhan dan tujuan website kamu.</p>
-</div>
-
-<div class="process-item">
-<div class="process-number">02</div>
-<h3>Konsep</h3>
-<p>Menentukan struktur, fitur dan visual website.</p>
-</div>
-
-<div class="process-item">
-<div class="process-number">03</div>
-<h3>Development</h3>
-<p>Website mulai dibangun dan dikembangkan.</p>
-</div>
-
-<div class="process-item">
-<div class="process-number">04</div>
-<h3>Launch</h3>
-<p>Website siap digunakan dan dipublikasikan.</p>
-</div>
-
-</div>
-</div>
+        </div>
+    </div>
 </section>
 
 <section id="projects">
-<div class="container">
+    <div class="container">
 
-<div class="section-label">04 / PROJECTS</div>
+        <div class="section-head">
+            <div class="section-number">03 / PROJECTS</div>
+            <h2 class="section-title">Beberapa project<br>yang pernah dibuat.</h2>
+            <p class="section-desc">
+                Lihat contoh website dan sistem sebagai referensi project kamu.
+            </p>
+        </div>
 
-<h2 class="section-title">
-Beberapa project<br>yang pernah dibuat.
-</h2>
+        <div class="projects">
 
-<div class="projects">
+            <article class="project">
+                <div>
+                    <div class="project-tag">WEBSITE • COMPANY PROFILE</div>
+                    <h3>Website Kulkas AAN</h3>
+                    <p>Website bisnis elektronik dan service.</p>
+                </div>
+                <a href="https://website-kulkas-aan.vercel.app/" target="_blank" rel="noopener">
+                    Lihat Website AAN ↗
+                </a>
+            </article>
 
-<div class="project">
-<div>
-<div class="project-type">WEBSITE • COMPANY PROFILE</div>
-<h3>Website Kulkas AAN</h3>
-<p>Website bisnis elektronik & service.</p>
-</div>
+            <article class="project">
+                <div>
+                    <div class="project-tag">SYSTEM • POS</div>
+                    <h3>POS Management</h3>
+                    <p>Konsep sistem kasir modern dengan dashboard management.</p>
+                </div>
+                <a href="#contact">Buat Sistem Serupa →</a>
+            </article>
 
-<a href="https://website-kulkas-aan.vercel.app/" target="_blank" class="project-link">
-Lihat Website AAN ↗
-</a>
-</div>
+            <article class="project">
+                <div>
+                    <div class="project-tag">SYSTEM • EDUCATION</div>
+                    <h3>SIM Insan Madani</h3>
+                    <p>Sistem informasi manajemen sekolah berbasis web.</p>
+                </div>
+                <a href="#contact">Buat Sistem Serupa →</a>
+            </article>
 
-<div class="project">
-<div>
-<div class="project-type">SYSTEM • POS</div>
-<h3>POS Management</h3>
-<p>Sistem kasir modern dengan dashboard management.</p>
-</div>
+            <article class="project">
+                <div>
+                    <div class="project-tag">PERSONAL • PORTFOLIO</div>
+                    <h3>Portfolio Website</h3>
+                    <p>Portfolio personal untuk menampilkan karya dan pengalaman.</p>
+                </div>
+                <a href="#contact">Lihat Project →</a>
+            </article>
 
-<a href="#contact" class="project-link">
-Buat Website Serupa →
-</a>
-</div>
-
-<div class="project">
-<div>
-<div class="project-type">SYSTEM • EDUCATION</div>
-<h3>SIM Insan Madani</h3>
-<p>Sistem informasi manajemen sekolah berbasis web.</p>
-</div>
-
-<a href="#contact" class="project-link">
-Konsultasi →
-</a>
-</div>
-
-<div class="project">
-<div>
-<div class="project-type">PERSONAL • PORTFOLIO</div>
-<h3>Portfolio</h3>
-<p>Portfolio personal untuk menampilkan karya dan pengalaman.</p>
-</div>
-
-<a href="#contact" class="project-link">
-Lihat Portfolio →
-</a>
-</div>
-
-</div>
-</div>
+        </div>
+    </div>
 </section>
 
-<section id="faq">
-<div class="container">
+<section id="testimonials">
+    <div class="container">
 
-<div class="section-label">05 / FAQ</div>
+        <div class="section-head">
+            <div class="section-number">04 / TESTIMONIALS</div>
+            <h2 class="section-title">Fokus pada hasil<br>dan pengalaman.</h2>
+        </div>
 
-<h2 class="section-title">
-Pertanyaan yang<br>sering ditanyakan.
-</h2>
+        <div class="testimonials">
+            <div class="quote">
+                “Website terlihat lebih profesional dan mudah digunakan.”
+                <strong>Customer A</strong>
+            </div>
 
-<div class="faq">
+            <div class="quote">
+                “Proses pengerjaan dimulai dari kebutuhan sampai website siap digunakan.”
+                <strong>Customer B</strong>
+            </div>
 
-<details>
-<summary>Berapa harga pembuatan website?</summary>
-<p>Harga dapat disesuaikan dengan fitur dan kebutuhan project.</p>
-</details>
+            <div class="quote">
+                “Tampilan modern dan responsive untuk bisnis.”
+                <strong>Customer C</strong>
+            </div>
+        </div>
 
-<details>
-<summary>Apakah website responsive?</summary>
-<p>Ya. Website dibuat agar nyaman digunakan di desktop, tablet dan smartphone.</p>
-</details>
-
-<details>
-<summary>Apakah bisa request desain?</summary>
-<p>Bisa. Desain dapat disesuaikan dengan kebutuhan bisnis dan brand.</p>
-</details>
-
-<details>
-<summary>Apakah bisa menggunakan domain sendiri?</summary>
-<p>Bisa menggunakan domain seperti .com, .id, .co.id dan lainnya.</p>
-</details>
-
-</div>
-</div>
+    </div>
 </section>
 
-<section id="contact">
-<div class="container">
+<section id="contact" class="contact">
+    <div class="container">
 
-<div class="contact-box">
+        <div class="section-head">
+            <div class="section-number">05 / CONTACT</div>
+            <h2 class="section-title">Punya project<br>yang ingin dibangun?</h2>
+            <p class="section-desc">
+                Ceritakan kebutuhan website kamu. Kita bahas konsep,
+                fitur dan estimasinya.
+            </p>
+        </div>
 
-<div class="section-label">06 / CONTACT</div>
+        <div class="contact-box">
+            <h3>Let's Build Something.</h3>
+            <p>Mulai konsultasi untuk project website kamu.</p>
 
-<h2>
-Punya project<br>yang ingin dibangun?
-</h2>
+            <a
+                class="btn btn-primary"
+                href="https://wa.me/6281934704296?text=Halo%20HABIBI.ID,%20saya%20ingin%20konsultasi%20project%20website."
+                target="_blank"
+                rel="noopener">
+                Chat WhatsApp ↗
+            </a>
+        </div>
 
-<p>
-Ceritakan kebutuhan website kamu.
-Kita bahas konsep, fitur dan estimasinya melalui WhatsApp.
-</p>
-
-<div class="buttons" style="justify-content:center">
-
-<a
-class="btn btn-primary"
-href="https://wa.me/6281934704296?text=Halo%20HABIBI.ID,%20saya%20ingin%20konsultasi%20mengenai%20project%20website."
-target="_blank">
-Chat WhatsApp ↗
-</a>
-
-<a class="btn" href="#home">
-Kembali ke Atas ↑
-</a>
-
-</div>
-
-</div>
-</div>
+    </div>
 </section>
 
 </main>
 
 <footer>
-<div class="container footer-content">
+    <div class="container footer-content">
+        <div>
+            <strong>HABIBI.ID</strong><br>
+            Digital solution untuk bisnis, brand dan personal project.
+        </div>
 
-<div>
-<strong>HABIBI.ID</strong><br>
-Digital solution untuk bisnis, brand dan personal project.
-</div>
-
-<div>
-© 2026 HABIBI.ID
-</div>
-
-</div>
+        <div>
+            © 2026 HABIBI.ID
+        </div>
+    </div>
 </footer>
 
 </body>

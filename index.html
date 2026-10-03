@@ -753,6 +753,153 @@ footer{
     }
 }
 </style>
+
+<style id="habibi-contact-form-styles">
+.habibi-contact-form{
+  display:grid;
+  gap:18px;
+  margin-top:28px;
+}
+
+.habibi-form-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+
+.habibi-form-group{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.habibi-form-group.full{
+  grid-column:1 / -1;
+}
+
+.habibi-form-label{
+  font-size:13px;
+  font-weight:700;
+  color:var(--text);
+}
+
+.habibi-form-label span{
+  color:#999;
+  font-weight:500;
+}
+
+.habibi-form-input,
+.habibi-form-select,
+.habibi-form-textarea{
+  width:100%;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  border-radius:14px;
+  padding:14px 15px;
+  font-family:inherit;
+  font-size:14px;
+  outline:none;
+  transition:.2s ease;
+}
+
+.habibi-form-input:focus,
+.habibi-form-select:focus,
+.habibi-form-textarea:focus{
+  border-color:var(--text);
+  box-shadow:0 0 0 3px rgba(128,128,128,.12);
+}
+
+.habibi-form-textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+.habibi-form-input::placeholder,
+.habibi-form-textarea::placeholder{
+  color:var(--muted);
+}
+
+.habibi-form-file{
+  width:100%;
+  border:1px dashed var(--border);
+  background:var(--soft);
+  color:var(--text);
+  border-radius:14px;
+  padding:12px;
+  font-family:inherit;
+  font-size:13px;
+  cursor:pointer;
+}
+
+.habibi-form-file::file-selector-button{
+  border:0;
+  background:var(--button);
+  color:var(--button-text);
+  border-radius:9px;
+  padding:9px 12px;
+  margin-right:10px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.habibi-form-consent{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-size:13px;
+  line-height:1.6;
+  color:var(--muted);
+}
+
+.habibi-form-consent input{
+  margin-top:4px;
+  accent-color:#111;
+  width:16px;
+  height:16px;
+  flex:none;
+}
+
+.habibi-form-consent a{
+  color:var(--text);
+}
+
+.habibi-form-submit{
+  width:100%;
+  border:0;
+  background:var(--button);
+  color:var(--button-text);
+  border-radius:14px;
+  padding:15px 20px;
+  font-family:inherit;
+  font-size:14px;
+  font-weight:800;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.habibi-form-submit:hover{
+  transform:translateY(-1px);
+  opacity:.9;
+}
+
+.habibi-form-note{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+@media(max-width:700px){
+  .habibi-form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .habibi-form-group.full{
+    grid-column:auto;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -1512,6 +1659,165 @@ Chat WhatsApp ↗
 
 </div>
 
+
+<form class="habibi-contact-form" id="habibiContactForm">
+
+  <div class="habibi-form-grid">
+
+    <div class="habibi-form-group">
+      <label class="habibi-form-label" for="habibiName">
+        Nama Lengkap <span>*</span>
+      </label>
+      <input
+        class="habibi-form-input"
+        type="text"
+        id="habibiName"
+        name="nama"
+        placeholder="Masukkan nama lengkap"
+        autocomplete="name"
+        required
+      >
+    </div>
+
+    <div class="habibi-form-group">
+      <label class="habibi-form-label" for="habibiEmail">
+        Email <span>*</span>
+      </label>
+      <input
+        class="habibi-form-input"
+        type="email"
+        id="habibiEmail"
+        name="email"
+        placeholder="nama@email.com"
+        autocomplete="email"
+        required
+      >
+    </div>
+
+    <div class="habibi-form-group">
+      <label class="habibi-form-label" for="habibiWhatsapp">
+        Nomor WhatsApp <span>*</span>
+      </label>
+      <input
+        class="habibi-form-input"
+        type="tel"
+        id="habibiWhatsapp"
+        name="whatsapp"
+        placeholder="08xxxxxxxxxx"
+        autocomplete="tel"
+        required
+      >
+    </div>
+
+    <div class="habibi-form-group">
+      <label class="habibi-form-label" for="habibiCompany">
+        Nama Bisnis/Perusahaan
+      </label>
+      <input
+        class="habibi-form-input"
+        type="text"
+        id="habibiCompany"
+        name="perusahaan"
+        placeholder="Nama bisnis atau perusahaan"
+        autocomplete="organization"
+      >
+    </div>
+
+    <div class="habibi-form-group">
+      <label class="habibi-form-label" for="habibiService">
+        Jenis Layanan <span>*</span>
+      </label>
+      <select
+        class="habibi-form-select"
+        id="habibiService"
+        name="layanan"
+        required
+      >
+        <option value="">Pilih layanan</option>
+        <option value="Website Company Profile">Website Company Profile</option>
+        <option value="Website Toko Online">Website Toko Online</option>
+        <option value="Sistem Informasi">Sistem Informasi</option>
+        <option value="Website Custom">Website Custom</option>
+        <option value="Maintenance Website">Maintenance Website</option>
+        <option value="Lainnya">Lainnya</option>
+      </select>
+    </div>
+
+    <div class="habibi-form-group">
+      <label class="habibi-form-label" for="habibiBudget">
+        Budget Perkiraan
+      </label>
+      <select
+        class="habibi-form-select"
+        id="habibiBudget"
+        name="budget"
+      >
+        <option value="">Pilih budget</option>
+        <option value="Di bawah Rp1.000.000">Di bawah Rp1.000.000</option>
+        <option value="Rp1.000.000 - Rp3.000.000">Rp1.000.000 - Rp3.000.000</option>
+        <option value="Rp3.000.000 - Rp5.000.000">Rp3.000.000 - Rp5.000.000</option>
+        <option value="Rp5.000.000 - Rp10.000.000">Rp5.000.000 - Rp10.000.000</option>
+        <option value="Di atas Rp10.000.000">Di atas Rp10.000.000</option>
+        <option value="Belum menentukan">Belum menentukan</option>
+      </select>
+    </div>
+
+    <div class="habibi-form-group full">
+      <label class="habibi-form-label" for="habibiMessage">
+        Pesan / Detail Project <span>*</span>
+      </label>
+      <textarea
+        class="habibi-form-textarea"
+        id="habibiMessage"
+        name="pesan"
+        placeholder="Ceritakan kebutuhan website atau sistem yang ingin dibuat..."
+        required
+      ></textarea>
+    </div>
+
+    <div class="habibi-form-group full">
+      <label class="habibi-form-label" for="habibiReference">
+        Upload Referensi <span>(opsional)</span>
+      </label>
+      <input
+        class="habibi-form-file"
+        type="file"
+        id="habibiReference"
+        name="referensi"
+        accept=".jpg,.jpeg,.png,.webp,.pdf"
+      >
+      <div class="habibi-form-note">
+        Format yang dapat dipilih: JPG, PNG, WEBP, atau PDF.
+      </div>
+    </div>
+
+    <div class="habibi-form-group full">
+      <label class="habibi-form-consent">
+        <input
+          type="checkbox"
+          id="habibiConsent"
+          required
+        >
+        <span>
+          Saya menyetujui untuk dihubungi terkait kebutuhan project
+          dan konsultasi yang saya kirimkan.
+        </span>
+      </label>
+    </div>
+
+    <div class="habibi-form-group full">
+      <button
+        type="submit"
+        class="habibi-form-submit"
+      >
+        Kirim Konsultasi
+      </button>
+    </div>
+
+  </div>
+
+</form>
+
 </section>
 
 </main>
@@ -1980,6 +2286,79 @@ setTheme(newTheme);
 
 setLanguage(currentLanguage);
 
+</script>
+
+
+<script id="habibi-contact-form-script">
+(function(){
+
+  const form = document.getElementById("habibiContactForm");
+
+  if (!form) return;
+
+  form.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const name = document.getElementById("habibiName").value.trim();
+    const email = document.getElementById("habibiEmail").value.trim();
+    const whatsapp = document.getElementById("habibiWhatsapp").value.trim();
+    const company = document.getElementById("habibiCompany").value.trim();
+    const service = document.getElementById("habibiService").value;
+    const budget = document.getElementById("habibiBudget").value;
+    const message = document.getElementById("habibiMessage").value.trim();
+    const consent = document.getElementById("habibiConsent").checked;
+    const reference = document.getElementById("habibiReference");
+
+    if (!name || !email || !whatsapp || !service || !message) {
+      alert("Mohon lengkapi semua kolom yang wajib diisi.");
+      return;
+    }
+
+    if (!consent) {
+      alert("Mohon setujui bahwa Anda bersedia dihubungi.");
+      return;
+    }
+
+    let referenceName = "Tidak ada";
+
+    if (reference.files && reference.files.length > 0) {
+      referenceName = reference.files[0].name;
+    }
+
+    /*
+      Nomor tujuan WhatsApp.
+      Jika nomor HABIBI.ID berbeda, cukup ubah angka di bawah.
+    */
+    const targetWhatsApp = "6281934704296";
+
+    const text =
+`Halo HABIBI.ID, saya ingin melakukan konsultasi project.
+
+Nama Lengkap: ${name}
+Email: ${email}
+Nomor WhatsApp: ${whatsapp}
+Nama Bisnis/Perusahaan: ${company || "-"}
+Jenis Layanan: ${service}
+Budget Perkiraan: ${budget || "-"}
+Pesan / Detail Project:
+${message}
+
+Referensi: ${referenceName}
+
+Saya menyetujui untuk dihubungi terkait kebutuhan project ini.`;
+
+    const url =
+      "https://wa.me/" +
+      targetWhatsApp +
+      "?text=" +
+      encodeURIComponent(text);
+
+    window.open(url, "_blank", "noopener,noreferrer");
+
+  });
+
+})();
 </script>
 
 </body>
